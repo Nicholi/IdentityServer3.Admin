@@ -1,35 +1,23 @@
 ﻿using System.Net;
-using System.Net.Http;
-using System.Net.Http.Formatting;
 using System.Web.Http.Filters;
-using Newtonsoft.Json.Serialization;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Models;
+using Autofac.Integration.WebApi;
 
 namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Filters
 {
-	public class ExceptionFilter : ExceptionFilterAttribute
-	{
-		public override void OnException(HttpActionExecutedContext context)
-		{
-			UiPreparedException exception = context.Exception as UiPreparedException;
+    public class ExceptionFilter : IAutofacExceptionFilter
+    {
+        public void OnException(HttpActionExecutedContext actionExecutedContext)
+        {
+            var exception = actionExecutedContext.Exception;
 
-			if (exception != null)
-			{
-				var formatter = new JsonMediaTypeFormatter()
-				{
-					SerializerSettings = { ContractResolver = new CamelCasePropertyNamesContractResolver() }
-				};
+            if (exception == null)
+            {
+                return;
+            }
 
-				context.Response = new HttpResponseMessage(HttpStatusCode.BadRequest)
-				{
-					Content = new ObjectContent(typeof(object), new { Translation = exception.Translation }, formatter)
-				};
-			}
-			else
-			{
-				base.OnException(context);
-			}
-
-		}
-	}
+            actionExecutedContext.Response.Content = null;
+            actionExecutedContext.Response.StatusCode = HttpStatusCode.InternalServerError;
+            // TODO: Log exception
+        }
+    }
 }

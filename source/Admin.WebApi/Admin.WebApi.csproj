@@ -96,7 +96,6 @@
     <Compile Include="Models\Persistence\PagingInformation.cs" />
     <Compile Include="Models\Persistence\SortColumn.cs" />
     <Compile Include="Models\Persistence\SortDirection.cs" />
-    <Compile Include="Models\UiPreparedException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Storage\ClientStore.cs" />
     <Compile Include="Storage\IPersistence.cs" />

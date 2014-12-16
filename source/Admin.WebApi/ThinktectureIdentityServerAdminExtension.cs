@@ -15,39 +15,35 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 	{
 		public static void UseThinktectureIdentityServerAdmin(this IAppBuilder app, StorageOptions storageOptions)
 		{
-			var container = RegisterServices(storageOptions);
+		    var httpConfiguration = new HttpConfiguration();
+			var container = RegisterServices(httpConfiguration, storageOptions);
 			
-			var httpConfig = CreateHttpConfiguration(container);
+			SetupHttpConfiguration(httpConfiguration, container);
 
-			ConfigureJson(httpConfig);
-			ConfigureFilters(httpConfig);
-			ConfigureRoutes(httpConfig);
+            ConfigureJson(httpConfiguration);
+			ConfigureRoutes(httpConfiguration);
 
-			app.UseWebApi(httpConfig);
+			app.UseWebApi(httpConfiguration);
 		}
 
-		private static HttpConfiguration CreateHttpConfiguration(IContainer container)
+		private static void SetupHttpConfiguration(HttpConfiguration configuration, IContainer container)
 		{
-			var httpConfig = new HttpConfiguration()
-			{
-				IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always,
-				DependencyResolver = new AutofacWebApiDependencyResolver(container),
-			};
-			return httpConfig;
+		    configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
+		    configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
 		}
 
-		private static void ConfigureFilters(HttpConfiguration httpConfig)
-		{
-			httpConfig.Filters.Add(new ExceptionFilter());
-		}
-
-		private static IContainer RegisterServices(StorageOptions storageOptions)
+		private static IContainer RegisterServices(HttpConfiguration configuration, StorageOptions storageOptions)
 		{
 			var builder = new ContainerBuilder();
 
 		    builder.RegisterApiControllers(typeof (ThinktectureIdentityServerAdminExtension).Assembly);
 		    builder.RegisterInstance(storageOptions).AsSelf();
 		    builder.RegisterModule(new StorageModule(storageOptions));
+
+            builder.RegisterWebApiFilterProvider(configuration);
+		    builder.RegisterType<ExceptionFilter>()
+                .AsWebApiExceptionFilterFor<ApiController>()
+		        .InstancePerRequest();
 
 			return builder.Build();
 		}
