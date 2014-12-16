@@ -1,6 +1,8 @@
-﻿namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
+﻿using System.Web.Http;
+
+namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
 {
-	public class ScopeController
+	public class ScopeController : ApiController
 	{
 		 
 	}

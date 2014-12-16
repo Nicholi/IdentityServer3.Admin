@@ -71,7 +71,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HelloController.cs" />
+    <Compile Include="Controllers\ScopeController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Models\UiPreparedException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
