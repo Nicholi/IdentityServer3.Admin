@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Net;
+using System.Web.Http;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Storage;
@@ -23,7 +25,14 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
 		[HttpGet]
 		public IHttpActionResult Get(int key)
 		{
-			return Ok(_scopeStore.Get(key));
+		    var result = _scopeStore.Get(key);
+
+		    if (result == null)
+		    {
+		        return NotFound();
+		    }
+
+			return Ok(result);
 		}
 
 		[HttpPost]
@@ -32,7 +41,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
             // TODO: Validation
 			_scopeStore.Add(scope);
 
-			return Ok();
+		    return StatusCode(HttpStatusCode.NoContent);
 		}
 
 		[HttpPut]
@@ -41,7 +50,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
             // TODO: Validation
 			_scopeStore.Update(scope);
 
-			return Ok();
+            return StatusCode(HttpStatusCode.NoContent);
 		}
 
 		[HttpDelete]
@@ -49,7 +58,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
 		{
 			_scopeStore.Delete(key);
 
-			return Ok();
+            return StatusCode(HttpStatusCode.NoContent);
 		}
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Net.Http;
 using System.Web.Http.Filters;
 using Autofac.Integration.WebApi;
 
@@ -15,7 +16,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Filters
                 return;
             }
 
-            actionExecutedContext.Response.Content = null;
+            actionExecutedContext.Response.Content = new StringContent("");
             actionExecutedContext.Response.StatusCode = HttpStatusCode.InternalServerError;
             // TODO: Log exception
         }
