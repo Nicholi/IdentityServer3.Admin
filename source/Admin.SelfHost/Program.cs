@@ -1,15 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using Microsoft.Owin.Hosting;
 
 namespace Thinktecture.IdentityServer.v3.Admin.SelfHost
 {
 	class Program
 	{
-		static void Main(string[] args)
+		static void Main()
 		{
+			var url = ConfigurationManager.AppSettings["BaseUrl"];
+
+			if (String.IsNullOrWhiteSpace(url))
+				throw new ConfigurationErrorsException("Value of AppSettings item \"BaseUrl\" is not a valid string.");
+
+			using (WebApp.Start(url))
+			{
+				Console.WriteLine("Server started. Press ENTER to end the process.");
+				Console.ReadLine();
+			}
 		}
 	}
 }
