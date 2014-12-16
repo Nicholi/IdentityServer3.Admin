@@ -7,8 +7,8 @@
     <ProjectGuid>{81C57E35-5973-44A3-BC77-420E928B100D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Thinktecture.IdentityServer.v3.Admin.SelfHost</RootNamespace>
-    <AssemblyName>Admin.SelfHost</AssemblyName>
+    <RootNamespace>Thinktecture.IdentityServer.v3.Admin.Host</RootNamespace>
+    <AssemblyName>Admin.Host</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Admin.EntityFramework">
+      <HintPath>..\..\..\Thinktecture.IdentityServer.v3.Admin.EntityFramework\source\Admin.EntityFramework\bin\Debug\Admin.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -73,12 +76,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Admin.Storage\Admin.Storage.csproj">
+      <Project>{42CD041E-3D6D-4B52-9F25-4370FA9C18D2}</Project>
+      <Name>Admin.Storage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Admin.WebApi\Admin.WebApi.csproj">
       <Project>{b10f2838-3c3c-4007-a0cd-96f7a5735f73}</Project>
       <Name>Admin.WebApi</Name>
