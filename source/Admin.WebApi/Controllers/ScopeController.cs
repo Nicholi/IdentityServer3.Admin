@@ -27,19 +27,19 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
 		}
 
 		[HttpPost]
-		public IHttpActionResult Add()
+		public IHttpActionResult Add(Scope scope)
 		{
-			// TODO: Add Web API Scope model as parameter and map it
-			_scopeStore.Add(new Scope());
+            // TODO: Validation
+			_scopeStore.Add(scope);
 
 			return Ok();
 		}
 
 		[HttpPut]
-		public IHttpActionResult Update()
+		public IHttpActionResult Update(Scope scope)
 		{
-			// TODO: Add Web API Scope model as parameter and map it
-			_scopeStore.Update(new Scope());
+            // TODO: Validation
+			_scopeStore.Update(scope);
 
 			return Ok();
 		}

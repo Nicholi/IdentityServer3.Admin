@@ -1,5 +1,6 @@
 ﻿using System.Web.Http;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence;
+using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Storage;
 
 namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
@@ -26,18 +27,20 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
 		}
 
 		[HttpPost]
-		public IHttpActionResult Add()
+		public IHttpActionResult Add(Client client)
 		{
-			// TODO: Add Web API Scope model as parameter and map it
+            // TODO: Validation
+            _clientStore.Add(client);
 			
 			return Ok();
 		}
 
 		[HttpPut]
-		public IHttpActionResult Update()
+		public IHttpActionResult Update(Client client)
 		{
-			// TODO: Add Web API Scope model as parameter and map it
-			
+			// TODO: Validation
+            _clientStore.Update(client);
+
 			return Ok();
 		}
 
