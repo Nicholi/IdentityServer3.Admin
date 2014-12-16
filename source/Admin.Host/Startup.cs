@@ -1,7 +1,7 @@
 ﻿using Owin;
 using Thinktecture.IdentityServer.v3.Admin.EntityFramework;
-using Thinktecture.IdentityServer.v3.Admin.Storage;
 using Thinktecture.IdentityServer.v3.Admin.WebApi;
+using Thinktecture.IdentityServer.v3.Admin.WebApi.Storage;
 
 namespace Thinktecture.IdentityServer.v3.Admin.Host
 {

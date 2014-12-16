@@ -6,8 +6,8 @@ using Microsoft.Owin;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
-using Thinktecture.IdentityServer.v3.Admin.Storage;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Filters;
+using Thinktecture.IdentityServer.v3.Admin.WebApi.Storage;
 
 namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 {
@@ -16,8 +16,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 		public static void UseThinktectureIdentityServerAdmin(this IAppBuilder app, StorageOptions storageOptions)
 		{
 			var container = RegisterServices(storageOptions);
-			app.UseAutofacMiddleware(container);
-
+			
 			var httpConfig = CreateHttpConfiguration(container);
 
 			ConfigureJson(httpConfig);

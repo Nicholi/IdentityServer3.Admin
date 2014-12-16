@@ -93,10 +93,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Admin.Storage\Admin.Storage.csproj">
-      <Project>{42CD041E-3D6D-4B52-9F25-4370FA9C18D2}</Project>
-      <Name>Admin.Storage</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Admin.WebApi\Admin.WebApi.csproj">
       <Project>{b10f2838-3c3c-4007-a0cd-96f7a5735f73}</Project>
       <Name>Admin.WebApi</Name>
