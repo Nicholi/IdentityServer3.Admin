@@ -5,6 +5,6 @@ namespace Thinktecture.IdentityServer.v3.Admin.Storage
 {
     public abstract class StorageRegistrations
     {
-        public abstract Registration<IPersistence<Scope>> ScopeStore { get; }
+        public abstract Registration<IPersistence<Scope>> ScopePersistence { get; }
     }
 }

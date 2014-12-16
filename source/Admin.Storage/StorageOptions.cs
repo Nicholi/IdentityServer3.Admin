@@ -6,7 +6,7 @@
 
         public bool ScopeSupportEnabled
         {
-            get { return StorageRegistrations != null && StorageRegistrations.ScopeStore != null; }
+            get { return StorageRegistrations != null && StorageRegistrations.ScopePersistence != null; }
         }
     }
 }

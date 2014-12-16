@@ -18,9 +18,11 @@ namespace Thinktecture.IdentityServer.v3.Admin.Storage
         {
             base.Load(builder);
 
-            if (_storageOptions.StorageRegistrations.ScopeStore != null)
+            builder.RegisterType<ScopeStore>().SingleInstance();
+
+            if (_storageOptions.StorageRegistrations.ScopePersistence != null)
             {
-                Register(builder, _storageOptions.StorageRegistrations.ScopeStore);
+                Register(builder, _storageOptions.StorageRegistrations.ScopePersistence);
             }
         }
 

@@ -46,8 +46,9 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 		{
 			var builder = new ContainerBuilder();
 
+		    builder.RegisterApiControllers(typeof (ThinktectureIdentityServerAdminExtension).Assembly);
 		    builder.RegisterInstance(storageOptions).AsSelf();
-		    builder.Register(context => new StorageModule(storageOptions));
+		    builder.RegisterModule(new StorageModule(storageOptions));
 
 			return builder.Build();
 		}
