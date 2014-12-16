@@ -5,7 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.WebApi", "Admin.WebApi\Admin.WebApi.csproj", "{B10F2838-3C3C-4007-A0CD-96F7A5735F73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.WebClient", "Admin.WebClient\Admin.WebClient.csproj", "{BAB7F073-E7D0-43C0-9D24-8A7743A9CB2A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{67756562-3662-4022-8C4E-32F74F990B9D}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +20,6 @@ Global
 		{B10F2838-3C3C-4007-A0CD-96F7A5735F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B10F2838-3C3C-4007-A0CD-96F7A5735F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B10F2838-3C3C-4007-A0CD-96F7A5735F73}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BAB7F073-E7D0-43C0-9D24-8A7743A9CB2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BAB7F073-E7D0-43C0-9D24-8A7743A9CB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BAB7F073-E7D0-43C0-9D24-8A7743A9CB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BAB7F073-E7D0-43C0-9D24-8A7743A9CB2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Thinktecture.IdentityServer.v3.Admin.WebApi</id>
+    <version>0.0.0</version>
+    <title>Thinktecture IdentityServer v3 - Admin</title>
+    <authors>Brock Allen, Dominick Baier, Manuel Rauber, Christian Liebel</authors>
+    <owners>Brock Allen, Dominick Baier</owners>
+    <projectUrl>https://github.com/thinktecture/Thinktecture.IdentityServer.v3.Admin</projectUrl>
+    <iconUrl>http://www.thinktecture.com/images/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>"Thinktecture IdentityServer v3 - Admin Web API for Thinktecture IdentityServer</description>
+    <copyright>Copyright 2014</copyright>
+    <tags>Thinktecture IdentityServer Identity Admin</tags>
+  </metadata>
+</package>
