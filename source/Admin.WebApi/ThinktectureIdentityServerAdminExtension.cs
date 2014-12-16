@@ -6,16 +6,16 @@ using Microsoft.Owin;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
+using Thinktecture.IdentityServer.v3.Admin.Storage;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Filters;
 
-[assembly:OwinStartup(typeof(Thinktecture.IdentityServer.v3.Admin.WebApi.Startup))]
 namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 {
-	public class Startup
+	public static class ThinktectureIdentityServerAdminExtension
 	{
-		public void Configuration(IAppBuilder app)
+		public static void Configuration(this IAppBuilder app, StorageOptions storageOptions)
 		{
-			var container = RegisterServices();
+			var container = RegisterServices(storageOptions);
 			app.UseAutofacMiddleware(container);
 
 			var httpConfig = CreateHttpConfiguration(container);
@@ -27,7 +27,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 			app.UseWebApi(httpConfig);
 		}
 
-		private HttpConfiguration CreateHttpConfiguration(IContainer container)
+		private static HttpConfiguration CreateHttpConfiguration(IContainer container)
 		{
 			var httpConfig = new HttpConfiguration()
 			{
@@ -37,14 +37,16 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 			return httpConfig;
 		}
 
-		private void ConfigureFilters(HttpConfiguration httpConfig)
+		private static void ConfigureFilters(HttpConfiguration httpConfig)
 		{
 			httpConfig.Filters.Add(new ExceptionFilter());
 		}
 
-		private static IContainer RegisterServices()
+		private static IContainer RegisterServices(StorageOptions storageOptions)
 		{
 			var builder = new ContainerBuilder();
+
+		    builder.Register(context => new StorageModule(storageOptions));
 
 			return builder.Build();
 		}
