@@ -1,4 +1,4 @@
-﻿using Thinktecture.IdentityServer.v3.Admin.Storage.Models;
+﻿using Thinktecture.IdentityServer.v3.Admin.Storage.Models.Persistence;
 
 namespace Thinktecture.IdentityServer.v3.Admin.Storage
 {

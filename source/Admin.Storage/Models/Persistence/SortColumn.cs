@@ -1,4 +1,4 @@
-﻿namespace Thinktecture.IdentityServer.v3.Admin.Storage.Models
+﻿namespace Thinktecture.IdentityServer.v3.Admin.Storage.Models.Persistence
 {
     public class SortColumn
     {

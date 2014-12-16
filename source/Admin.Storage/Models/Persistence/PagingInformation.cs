@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace Thinktecture.IdentityServer.v3.Admin.Storage.Models
+namespace Thinktecture.IdentityServer.v3.Admin.Storage.Models.Persistence
 {
     public class PagingInformation
     {

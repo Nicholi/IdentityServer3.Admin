@@ -39,10 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IPersistence.cs" />
-    <Compile Include="Models\PageResult.cs" />
-    <Compile Include="Models\PagingInformation.cs" />
-    <Compile Include="Models\SortColumn.cs" />
-    <Compile Include="Models\SortDirection.cs" />
+    <Compile Include="Models\Persistence\PageResult.cs" />
+    <Compile Include="Models\Persistence\PagingInformation.cs" />
+    <Compile Include="Models\Persistence\SortColumn.cs" />
+    <Compile Include="Models\Persistence\SortDirection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
