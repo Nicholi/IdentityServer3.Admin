@@ -8,7 +8,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence
     {
         private int _skip;
         private int _take;
-        private ICollection<SortColumn> _sortColumns;
+        private IList<SortColumn> _sortColumns;
 
         public int Skip
         {
@@ -40,9 +40,9 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence
 
         public string SearchTerm { get; set; }
 
-        public ICollection<SortColumn> SortColumns
+        public IList<SortColumn> SortColumns
         {
-            get { return _sortColumns ?? (_sortColumns = new Collection<SortColumn>()); }
+            get { return _sortColumns ?? (_sortColumns = new List<SortColumn>()); }
             set { _sortColumns = value; }
         }
     }
