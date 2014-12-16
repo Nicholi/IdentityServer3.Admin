@@ -1,8 +1,10 @@
 ﻿using System.Net.Http.Formatting;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using Autofac;
 using Autofac.Integration.WebApi;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
@@ -17,7 +19,8 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 		{
 		    var httpConfiguration = new HttpConfiguration();
 			var container = RegisterServices(httpConfiguration, storageOptions);
-			
+
+            app.UseCors(CorsOptions.AllowAll);
 			SetupHttpConfiguration(httpConfiguration, container);
 
             ConfigureJson(httpConfiguration);
@@ -30,6 +33,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 		{
 		    configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
 		    configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+		    configuration.EnableCors(new EnableCorsAttribute("*", "*", "*"));
 		}
 
 		private static IContainer RegisterServices(HttpConfiguration configuration, StorageOptions storageOptions)
