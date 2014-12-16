@@ -3,36 +3,36 @@ using Thinktecture.IdentityServer.v3.Admin.Storage.Models.Persistence;
 
 namespace Thinktecture.IdentityServer.v3.Admin.Storage
 {
-    public class ScopeStore : IPersistence<Scope, int>
+    public class ScopeStore : IPersistence<Scope>
     {
-        private readonly IPersistence<Scope, int> _persistence;
+        private readonly IPersistence<Scope> _persistence;
 
-        public ScopeStore(IPersistence<Scope, int> persistence)
+        public ScopeStore(IPersistence<Scope> persistence)
         {
             _persistence = persistence;
         }
 
-        public PageResult<int> List(PagingInformation pagingInformation)
+        public PageResult<Scope> List(PagingInformation pagingInformation)
         {
             return _persistence.List(pagingInformation);
         }
 
-        public int Get(Scope key)
+        public Scope Get(int key)
         {
             return _persistence.Get(key);
         }
 
-        public void Delete(Scope key)
+        public void Delete(int key)
         {
             _persistence.Delete(key);
         }
 
-        public void Add(int entity)
+        public void Add(Scope entity)
         {
             _persistence.Add(entity);
         }
 
-        public void Update(int entity)
+        public void Update(Scope entity)
         {
             _persistence.Update(entity);
         }

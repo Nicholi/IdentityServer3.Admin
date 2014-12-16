@@ -2,11 +2,11 @@
 
 namespace Thinktecture.IdentityServer.v3.Admin.Storage
 {
-    public interface IPersistence<in TEntityKey, TEntity>
+    public interface IPersistence<TEntity>
     {
         PageResult<TEntity> List(PagingInformation pagingInformation);
-        TEntity Get(TEntityKey key);
-        void Delete(TEntityKey key);
+        TEntity Get(int key);
+        void Delete(int key);
         void Add(TEntity entity);
         void Update(TEntity entity);
     }
