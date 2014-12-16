@@ -6,7 +6,7 @@ $(function () {
     "use strict";
 
     window.app = window.app || { resolver: {} };
-    app.module = angular.module('ttIdentityAdmin', ['ui.router']);
+    app.module = angular.module('ttIdentityAdmin', ['ui.router', 'ui.notify']);
 
     app.module
         .config(
