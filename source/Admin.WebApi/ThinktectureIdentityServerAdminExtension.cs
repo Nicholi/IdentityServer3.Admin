@@ -13,7 +13,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 {
 	public static class ThinktectureIdentityServerAdminExtension
 	{
-		public static void Configuration(this IAppBuilder app, StorageOptions storageOptions)
+		public static void UseThinktectureIdentityServerAdmin(this IAppBuilder app, StorageOptions storageOptions)
 		{
 			var container = RegisterServices(storageOptions);
 			app.UseAutofacMiddleware(container);
