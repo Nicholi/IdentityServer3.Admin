@@ -19,6 +19,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Storage
             base.Load(builder);
 
             builder.RegisterType<ScopeStore>().SingleInstance();
+            builder.RegisterType<ClientStore>().SingleInstance();
 
             if (_storageOptions.StorageRegistrations.ScopePersistence != null)
             {

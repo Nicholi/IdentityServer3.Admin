@@ -29,8 +29,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
 		public IHttpActionResult Add()
 		{
 			// TODO: Add Web API Scope model as parameter and map it
-			_clientStore.Add(new object());
-
+			
 			return Ok();
 		}
 
@@ -38,8 +37,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
 		public IHttpActionResult Update()
 		{
 			// TODO: Add Web API Scope model as parameter and map it
-			_clientStore.Update(new object());
-
+			
 			return Ok();
 		}
 

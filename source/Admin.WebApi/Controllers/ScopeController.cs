@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.IdentityServer;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence;
+using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Storage;
 
 namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers

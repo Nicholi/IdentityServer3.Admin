@@ -1,36 +1,41 @@
 ﻿using System;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence;
+using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage;
 
 namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Storage
 {
-	public class ClientStore
+	public class ClientStore : IPersistence<Client>
 	{
-		// TODO: Implement from IPersistence
-		// TODO: Use real DTO
+	    private readonly IPersistence<Client> _persistence;
 
-		public PageResult<object> List(PagingInformation pagingInformation)
-		{
-			throw new NotImplementedException();
-		}
+	    public ClientStore(IPersistence<Client> persistence)
+	    {
+	        _persistence = persistence;
+	    }
 
-		public object Get(int key)
-		{
-			throw new NotImplementedException();
-		}
+	    public PageResult<Client> List(PagingInformation pagingInformation)
+	    {
+	        return _persistence.List(pagingInformation);
+	    }
 
-		public void Delete(int key)
-		{
-			throw new NotImplementedException();
-		}
+	    public Client Get(int key)
+	    {
+	        return _persistence.Get(key);
+	    }
 
-		public void Add(object entity)
-		{
-			throw new NotImplementedException();
-		}
+	    public void Delete(int key)
+	    {
+	        _persistence.Delete(key);
+	    }
 
-		public void Update(object entity)
-		{
-			throw new NotImplementedException();
-		}
+	    public void Add(Client entity)
+	    {
+	        _persistence.Add(entity);
+	    }
+
+	    public void Update(Client entity)
+	    {
+	        _persistence.Update(entity);
+	    }
 	}
 }

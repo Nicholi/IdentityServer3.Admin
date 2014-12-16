@@ -8,5 +8,10 @@
         {
             get { return StorageRegistrations != null && StorageRegistrations.ScopePersistence != null; }
         }
+
+        public bool ClientSupportEnabled
+        {
+            get { return StorageRegistrations != null && StorageRegistrations.ClientPersistence != null; }
+        }
     }
 }

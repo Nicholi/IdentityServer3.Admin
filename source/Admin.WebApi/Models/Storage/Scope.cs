@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Models.IdentityServer
+namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage
 {
     public class Scope
     {

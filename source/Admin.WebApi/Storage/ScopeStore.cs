@@ -1,5 +1,5 @@
-﻿using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.IdentityServer;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence;
+﻿using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence;
+using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage;
 
 namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Storage
 {
