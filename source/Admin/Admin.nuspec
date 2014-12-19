@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Thinktecture.IdentityServer.v3.Admin.WebApi</id>
+    <id>Thinktecture.IdentityServer.v3.Admin</id>
     <version>0.0.0</version>
     <title>Thinktecture IdentityServer v3 - Admin</title>
     <authors>Brock Allen, Dominick Baier, Manuel Rauber, Christian Liebel</authors>

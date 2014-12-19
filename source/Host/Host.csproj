@@ -123,12 +123,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Thinktecture.IdentityServer">
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.1.0.0-pre-84\lib\net45\Thinktecture.IdentityServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Thinktecture.IdentityServer.Core.EntityFramework">
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.EntityFramework.1.0.0-pre-9\lib\net45\Thinktecture.IdentityServer.Core.EntityFramework.dll</HintPath>
+    <Reference Include="Thinktecture.IdentityServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thinktecture.IdentityServer.v3.1.0.0-pre-10009\lib\net45\Thinktecture.IdentityServer.dll</HintPath>
     </Reference>
     <Reference Include="Thinktecture.IdentityServer.v3.Admin.EntityFramework">
       <HintPath>Library\Thinktecture.IdentityServer.v3.Admin.EntityFramework.dll</HintPath>
@@ -152,9 +149,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Admin.WebApi\Admin.WebApi.csproj">
+    <ProjectReference Include="..\Admin\Admin.csproj">
       <Project>{b10f2838-3c3c-4007-a0cd-96f7a5735f73}</Project>
-      <Name>Admin.WebApi</Name>
+      <Name>Admin</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -59,5 +59,5 @@ task CreateNuGetPackage -depends Compile {
 	}
 
 	md $dist_directory
-	exec { . $nuget_path pack $src_directory\Admin.WebApi\Admin.WebApi.csproj -o $dist_directory -version $packageVersion }
+	exec { . $nuget_path pack $src_directory\Admin.WebApi\Admin.csproj -o $dist_directory -version $packageVersion }
 }
