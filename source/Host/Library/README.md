@@ -1,1 +1,0 @@
-This folder is just temporary as long as the EntityFramework project does not have a nuget package.
