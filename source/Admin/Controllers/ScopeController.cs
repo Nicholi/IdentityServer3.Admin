@@ -54,7 +54,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
 		}
 
 		[HttpDelete]
-		public IHttpActionResult Delete([FromBody] int key)
+		public IHttpActionResult Delete(int key)
 		{
 			_scopeStore.Delete(key);
 
