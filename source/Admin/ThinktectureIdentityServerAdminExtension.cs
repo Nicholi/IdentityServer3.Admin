@@ -60,6 +60,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi
 			var jsonFormatter = config.Formatters.JsonFormatter;
 			jsonFormatter.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
 			jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            jsonFormatter.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
 		}
 
 		private static void ConfigureRoutes(HttpConfiguration config)
