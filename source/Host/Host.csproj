@@ -133,7 +133,7 @@
     </Reference>
     <Reference Include="Thinktecture.IdentityServer.v3.Admin.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.Admin.EntityFramework.1.0.0-pre-10002\lib\net45\Thinktecture.IdentityServer.v3.Admin.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Thinktecture.IdentityServer.v3.Admin.EntityFramework.1.0.0-pre-10003\lib\net45\Thinktecture.IdentityServer.v3.Admin.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Thinktecture.IdentityServer.v3.Admin.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
