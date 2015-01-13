@@ -95,8 +95,8 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\ScopeController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
-    <Compile Include="Models\Storage\IdentityProviderRestriction.cs" />
-    <Compile Include="Models\Storage\PostLogoutRedirectUri.cs" />
+    <Compile Include="Models\Storage\ClientIdPRestriction.cs" />
+    <Compile Include="Models\Storage\ClientPostLogoutRedirectUri.cs" />
     <Compile Include="Models\Storage\ClientScopeRestriction.cs" />
     <Compile Include="Models\Storage\ClientRedirectUri.cs" />
     <Compile Include="Models\Storage\Client.cs" />
