@@ -34,35 +34,56 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Storage
 
         private static void Register(ContainerBuilder builder, Registration registration, string name = null)
         {
-            if (registration.ImplementationType != null)
+            if (registration.Instance != null)
             {
-                var reg = builder.RegisterType(registration.ImplementationType);
+                var reg = builder.Register(ctx => registration.Instance).SingleInstance();
+                
                 if (name != null)
                 {
-                    reg.Named(name, registration.InterfaceType);
+                    reg.Named(name, registration.DependencyType);
                 }
                 else
                 {
-                    reg.As(registration.InterfaceType);
+                    reg.As(registration.DependencyType);
                 }
+
+                return;
             }
-            else if (registration.ImplementationFactory != null)
+
+            if (registration.Type != null)
             {
-                var reg = builder.Register(ctx => registration.ImplementationFactory(new AutofacDependencyResolver(ctx)));
+                var reg = builder.RegisterType(registration.Type);
+
                 if (name != null)
                 {
-                    reg.Named(name, registration.InterfaceType);
+                    reg.Named(name, registration.DependencyType);
                 }
                 else
                 {
-                    reg.As(registration.InterfaceType);
+                    reg.As(registration.DependencyType);
                 }
+
+                return;
             }
-            else
+            
+            if (registration.Factory != null)
             {
-                var message = "No type or factory found on registration " + registration.GetType().FullName;
-                throw new InvalidOperationException(message);
+                var reg = builder.Register(ctx => registration.Factory(new AutofacDependencyResolver(ctx)));
+                
+                if (name != null)
+                {
+                    reg.Named(name, registration.DependencyType);
+                }
+                else
+                {
+                    reg.As(registration.DependencyType);
+                }
+
+                return;
             }
+
+            var message = "No type or factory found on registration " + registration.GetType().FullName;
+            throw new InvalidOperationException(message);
         }
     }
 
@@ -74,7 +95,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Storage
             this.ctx = ctx;
         }
 
-        public T Resolve<T>()
+        public T Resolve<T>(string name = null)
         {
             return ctx.Resolve<T>();
         }
