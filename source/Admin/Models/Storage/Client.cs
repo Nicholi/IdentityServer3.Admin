@@ -25,10 +25,13 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage
         public virtual int SlidingRefreshTokenLifetime { get; set; }
         public virtual TokenUsage RefreshTokenUsage { get; set; }
         public virtual TokenExpiration RefreshTokenExpiration { get; set; }
-        public virtual SigningKeyTypes IdentityTokenSigningKeyType { get; set; }
         public virtual AccessTokenType AccessTokenType { get; set; }
         public virtual bool AllowLocalLogin { get; set; }
         public virtual ICollection<ClientIdPRestriction> IdentityProviderRestrictions { get; set; }
         public virtual bool IncludeJwtId { get; set; }
+        public virtual ICollection<ClientClaim> Claims { get; set; }
+        public virtual bool AlwaysSendClientClaims { get; set; }
+        public virtual bool PrefixClientClaims { get; set; }
+        public virtual ICollection<ClientGrantTypeRestriction> CustomGrantTypeRestrictions { get; set; }
     }
 }

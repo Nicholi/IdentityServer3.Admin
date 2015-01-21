@@ -95,6 +95,8 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\ScopeController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
+    <Compile Include="Models\Storage\ClientGrantTypeRestriction.cs" />
+    <Compile Include="Models\Storage\ClientClaim.cs" />
     <Compile Include="Models\Storage\ClientIdPRestriction.cs" />
     <Compile Include="Models\Storage\ClientPostLogoutRedirectUri.cs" />
     <Compile Include="Models\Storage\ClientScopeRestriction.cs" />
