@@ -95,6 +95,8 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\ScopeController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
+    <Compile Include="Models\Persistence\InternalPropertyContractResolver.cs" />
+    <Compile Include="Models\Persistence\PagingInformationModelBinder.cs" />
     <Compile Include="Models\Persistence\UiGridSortDirection.cs" />
     <Compile Include="Models\Storage\ClientGrantTypeRestriction.cs" />
     <Compile Include="Models\Storage\ClientClaim.cs" />

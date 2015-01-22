@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Web.Http;
+using System.Web.Http.ModelBinding;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage;
 using Thinktecture.IdentityServer.v3.Admin.WebApi.Storage;
@@ -17,7 +18,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
 		}
 
 		[HttpGet]
-		public IHttpActionResult List([FromUri] PagingInformation pagingInformation)
+		public IHttpActionResult List([ModelBinder(typeof(PagingInformationModelBinder))] PagingInformation pagingInformation)
 		{
 			return Ok(_scopeStore.List(pagingInformation));
 		}

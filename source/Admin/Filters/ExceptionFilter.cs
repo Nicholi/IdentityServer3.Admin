@@ -16,8 +16,7 @@ namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Filters
                 return;
             }
 
-            actionExecutedContext.Response.Content = new StringContent("");
-            actionExecutedContext.Response.StatusCode = HttpStatusCode.InternalServerError;
+            actionExecutedContext.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
             // TODO: Log exception
         }
     }

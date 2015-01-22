@@ -18,14 +18,14 @@
             {
                 if (SortDirection == SortDirection.Ascending)
                 {
-                    return UiGridSortDirection.ASC;
+                    return UiGridSortDirection.asc;
                 }
 
-                return UiGridSortDirection.DESC;
+                return UiGridSortDirection.desc;
             }
             set
             {
-                if (value == UiGridSortDirection.ASC)
+                if (value == UiGridSortDirection.asc)
                 {
                     SortDirection = SortDirection.Ascending;
                     return;

@@ -2,7 +2,7 @@
 {
     internal enum UiGridSortDirection
     {
-        ASC,
-        DESC
+        asc,
+        desc
     }
 }
