@@ -125,7 +125,7 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="Thinktecture.IdentityServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.1.0.0-pre-10266\lib\net45\Thinktecture.IdentityServer.dll</HintPath>
+      <HintPath>..\packages\Thinktecture.IdentityServer.v3.1.0.0-pre-10270\lib\net45\Thinktecture.IdentityServer.dll</HintPath>
     </Reference>
     <Reference Include="Thinktecture.IdentityServer.Core.EntityFramework, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -137,7 +137,7 @@
     </Reference>
     <Reference Include="Thinktecture.IdentityServer.v3.Admin.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.Admin.1.0.0-pre-1019\lib\net45\Thinktecture.IdentityServer.v3.Admin.WebApi.dll</HintPath>
+      <HintPath>..\packages\Thinktecture.IdentityServer.v3.Admin.1.0.0-pre-1022\lib\net45\Thinktecture.IdentityServer.v3.Admin.WebApi.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
