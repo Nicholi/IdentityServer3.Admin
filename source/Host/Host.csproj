@@ -87,6 +87,10 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
+    <Reference Include="RefactorThis.GraphDiff">
+      <HintPath>..\packages\RefactorThis.GraphDiff.2.0.1\lib\RefactorThis.GraphDiff.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -131,9 +135,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Thinktecture.IdentityServer.v3.EntityFramework.1.0.0-pre-10020\lib\net45\Thinktecture.IdentityServer.Core.EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Thinktecture.IdentityServer.v3.Admin.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.Admin.EntityFramework.1.0.0-pre-10003\lib\net45\Thinktecture.IdentityServer.v3.Admin.EntityFramework.dll</HintPath>
+    <Reference Include="Thinktecture.IdentityServer.v3.Admin.EntityFramework">
+      <HintPath>..\packages\Thinktecture.IdentityServer.v3.Admin.EntityFramework.1.0.0-pre-10009\lib\net45\Thinktecture.IdentityServer.v3.Admin.EntityFramework.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Thinktecture.IdentityServer.v3.Admin.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
