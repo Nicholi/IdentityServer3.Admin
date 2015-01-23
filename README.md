@@ -1,2 +1,2 @@
-Thinktecture.IdentityServer.v3.Admin
+Thinktecture.IdentityServer3.Admin
 ====================================
