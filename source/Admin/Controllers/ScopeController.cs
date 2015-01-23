@@ -1,12 +1,11 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Storage;
+using Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence;
+using Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage;
+using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
 
-namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Controllers
+namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 {
 	public class ScopeController : ApiController
 	{

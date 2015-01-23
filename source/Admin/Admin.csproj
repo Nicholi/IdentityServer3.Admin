@@ -7,8 +7,8 @@
     <ProjectGuid>{B10F2838-3C3C-4007-A0CD-96F7A5735F73}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Thinktecture.IdentityServer.v3.Admin.WebApi</RootNamespace>
-    <AssemblyName>Thinktecture.IdentityServer.v3.Admin.WebApi</AssemblyName>
+    <RootNamespace>Thinktecture.IdentityServer3.Admin.WebApi</RootNamespace>
+    <AssemblyName>Thinktecture.IdentityServer3.Admin.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>

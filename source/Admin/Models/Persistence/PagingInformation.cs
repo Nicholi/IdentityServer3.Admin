@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
-namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence
+namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence
 {
     public class PagingInformation
     {

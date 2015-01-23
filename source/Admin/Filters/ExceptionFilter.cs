@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Web.Http.Filters;
 using Autofac.Integration.WebApi;
 
-namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Filters
+namespace Thinktecture.IdentityServer3.Admin.WebApi.Filters
 {
     public class ExceptionFilter : IAutofacExceptionFilter
     {

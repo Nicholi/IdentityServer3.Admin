@@ -3,15 +3,14 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using Autofac;
 using Autofac.Integration.WebApi;
-using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Filters;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Storage;
+using Thinktecture.IdentityServer3.Admin.WebApi.Filters;
+using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
 
-namespace Thinktecture.IdentityServer.v3.Admin.WebApi
+namespace Thinktecture.IdentityServer3.Admin.WebApi
 {
 	public static class ThinktectureIdentityServerAdminExtension
 	{

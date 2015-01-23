@@ -5,7 +5,7 @@ using System.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence
+namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence
 {
     internal class InternalPropertyContractResolver : DefaultContractResolver
     {

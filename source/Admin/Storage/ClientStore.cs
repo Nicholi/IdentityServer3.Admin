@@ -1,8 +1,7 @@
-﻿using System;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Persistence;
-using Thinktecture.IdentityServer.v3.Admin.WebApi.Models.Storage;
+﻿using Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence;
+using Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage;
 
-namespace Thinktecture.IdentityServer.v3.Admin.WebApi.Storage
+namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
 {
 	public class ClientStore : IPersistence<Client>
 	{
