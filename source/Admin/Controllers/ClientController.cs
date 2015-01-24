@@ -24,7 +24,14 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 		[HttpGet]
 		public IHttpActionResult Get(int key)
 		{
-			return Ok(_clientStore.Get(key));
+		    var result = _clientStore.Get(key);
+
+            if (result == null)
+            {
+                return NotFound();
+            }
+
+		    return Ok(result);
 		}
 
 		[HttpPost]
