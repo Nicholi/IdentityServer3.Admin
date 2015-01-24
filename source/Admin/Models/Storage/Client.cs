@@ -8,7 +8,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage
         public virtual int Id { get; set; }
         public virtual bool Enabled { get; set; }
         public virtual string ClientId { get; set; }
-        public virtual string ClientSecret { get; set; }
+        public virtual ICollection<ClientSecret> ClientSecrets { get; set; }
         public virtual string ClientName { get; set; }
         public virtual string ClientUri { get; set; }
         public virtual string LogoUri { get; set; }
