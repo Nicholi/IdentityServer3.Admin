@@ -7,6 +7,10 @@ using Newtonsoft.Json.Serialization;
 
 namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence
 {
+    /// <summary>
+    /// Used for serializing internal properties.
+    /// Useful for <see cref="SortColumn"/> which should not expose <see cref="UiGridSortDirection"/>
+    /// </summary>
     internal class InternalPropertyContractResolver : DefaultContractResolver
     {
         protected override List<MemberInfo> GetSerializableMembers(Type objectType)

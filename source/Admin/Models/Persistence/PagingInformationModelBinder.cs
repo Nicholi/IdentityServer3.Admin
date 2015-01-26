@@ -7,6 +7,9 @@ using Newtonsoft.Json;
 namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence
 {
     // TODO: Review this, maybe we should move paging information to body? (but it is a http get request), mh 
+    /// <summary>
+    /// Reads the paging information form the url. 
+    /// </summary>
     public class PagingInformationModelBinder : IModelBinder
     {
         private static JsonSerializerSettings _jsonSerializerSettings = new JsonSerializerSettings()

@@ -12,6 +12,9 @@
         /// </summary>
         public SortDirection SortDirection { get; set; }
 
+        /// <summary>
+        /// Only used for internal mapping. Implementations should not deal with AngularJS constants.
+        /// </summary>
         internal UiGridSortDirection UiGridSortDirection
         {
             get

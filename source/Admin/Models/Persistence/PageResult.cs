@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence
 {
+    /// <summary>
+    /// Returns a paged list of <see cref="TEntity"/>
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     public class PageResult<TEntity>
     {
         private int _totalCount;
