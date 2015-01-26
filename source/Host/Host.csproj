@@ -55,11 +55,13 @@
     <Reference Include="AutoMapper.Net4">
       <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin">
@@ -82,7 +84,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -127,21 +129,19 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Thinktecture.IdentityServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.1.0.0-pre-10275\lib\net45\Thinktecture.IdentityServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Thinktecture.IdentityServer.Core.EntityFramework, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.EntityFramework.1.0.0-pre-10021\lib\net45\Thinktecture.IdentityServer.Core.EntityFramework.dll</HintPath>
+    <Reference Include="Thinktecture.IdentityServer3">
+      <HintPath>..\packages\Thinktecture.IdentityServer3.1.0.1-build00033\lib\net45\Thinktecture.IdentityServer3.dll</HintPath>
     </Reference>
     <Reference Include="Thinktecture.IdentityServer3.Admin.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.Admin.EntityFramework.1.0.0-pre-10016\lib\net45\Thinktecture.IdentityServer3.Admin.EntityFramework.dll</HintPath>
+      <HintPath>..\packages\Thinktecture.IdentityServer3.Admin.EntityFramework.1.0.0-pre-10019\lib\net45\Thinktecture.IdentityServer3.Admin.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Thinktecture.IdentityServer3.Admin.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer.v3.Admin.1.0.0-pre-1033\lib\net45\Thinktecture.IdentityServer3.Admin.WebApi.dll</HintPath>
+      <HintPath>..\packages\Thinktecture.IdentityServer3.Admin.1.0.0-pre-1039\lib\net45\Thinktecture.IdentityServer3.Admin.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Thinktecture.IdentityServer3.EntityFramework">
+      <HintPath>..\packages\Thinktecture.IdentityServer3.EntityFramework.1.0.1-build00002\lib\net45\Thinktecture.IdentityServer3.EntityFramework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
