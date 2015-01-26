@@ -39,9 +39,9 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 		public IHttpActionResult Add(Scope scope)
 		{
             // TODO: Validation
-			_scopeStore.Add(scope);
+			var newId = _scopeStore.Add(scope);
 
-		    return StatusCode(HttpStatusCode.NoContent);
+		    return Ok(newId);
 		}
 
 		[HttpPut]

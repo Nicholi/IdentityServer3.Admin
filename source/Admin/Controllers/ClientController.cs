@@ -38,9 +38,9 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 		public IHttpActionResult Add(Client client)
 		{
             // TODO: Validation
-            _clientStore.Add(client);
+            var newId = _clientStore.Add(client);
 			
-			return Ok();
+			return Ok(newId);
 		}
 
 		[HttpPut]

@@ -27,9 +27,9 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
             _persistence.Delete(key);
         }
 
-        public void Add(Scope entity)
+        public object Add(Scope entity)
         {
-            _persistence.Add(entity);
+            return _persistence.Add(entity);
         }
 
         public void Update(Scope entity)
