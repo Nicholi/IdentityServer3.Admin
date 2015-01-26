@@ -60,5 +60,13 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 
             return StatusCode(HttpStatusCode.NoContent);
 		}
+
+        [HttpGet]
+	    public IHttpActionResult TotalCount()
+	    {
+	        var totalCount = _scopeStore.TotalCount();
+
+	        return Ok(totalCount);
+	    }
 	}
 }
