@@ -36,5 +36,11 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
         /// </summary>
         /// <param name="entity"></param>
         void Update(TEntity entity);
+
+        /// <summary>
+        /// Returns the total count of all items within this storage
+        /// </summary>
+        /// <returns></returns>
+        int TotalCount();
     }
 }

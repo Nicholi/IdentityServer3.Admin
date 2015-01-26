@@ -36,5 +36,10 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
         {
             _persistence.Update(entity);
         }
+
+        public int TotalCount()
+        {
+            return _persistence.TotalCount();
+        }
     }
 }
