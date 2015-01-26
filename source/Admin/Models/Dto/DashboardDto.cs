@@ -2,7 +2,7 @@
 {
     public class DashboardDto
     {
-        public int ScopeStoreTotalCount { get; set; }
-        public int ClientStoreTotalCount { get; set; }
+        public int ScopesTotalCount { get; set; }
+        public int ClientsTotalCount { get; set; }
     }
 }

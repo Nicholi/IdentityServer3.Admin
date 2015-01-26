@@ -20,8 +20,8 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
         {
             var result = new DashboardDto()
             {
-                ClientStoreTotalCount = _clientStore.TotalCount(),
-                ScopeStoreTotalCount = _scopeStore.TotalCount()
+                ClientsTotalCount = _clientStore.TotalCount(),
+                ScopesTotalCount = _scopeStore.TotalCount()
             };
 
             return Ok(result);
