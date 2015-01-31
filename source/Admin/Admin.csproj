@@ -86,8 +86,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Thinktecture.IdentityServer3">
-      <HintPath>..\packages\Thinktecture.IdentityServer3.1.0.1-build00033\lib\net45\Thinktecture.IdentityServer3.dll</HintPath>
+    <Reference Include="Thinktecture.IdentityServer3, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thinktecture.IdentityServer3.1.0.1-build00043\lib\net45\Thinktecture.IdentityServer3.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +118,8 @@
     <Compile Include="Models\Persistence\SortDirection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Storage\ClientStore.cs" />
+    <Compile Include="Storage\InMemoryScopeStorage.cs" />
+    <Compile Include="Storage\InMemoryClientStorage.cs" />
     <Compile Include="Storage\IPersistence.cs" />
     <Compile Include="Storage\ScopeStore.cs" />
     <Compile Include="Storage\StorageModule.cs" />
