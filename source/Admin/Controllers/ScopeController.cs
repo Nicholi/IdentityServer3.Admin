@@ -4,19 +4,22 @@ using System.Web.Http.ModelBinding;
 using Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence;
 using Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage;
 using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
+using Thinktecture.IdentityServer3.Admin.WebApi.Validation;
 
 namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 {
 	public class ScopeController : ApiController
 	{
 		private readonly ScopeStore _scopeStore;
+	    private readonly IScopeValidation _validation;
 
-		public ScopeController(ScopeStore scopeStore)
-		{
-			_scopeStore = scopeStore;
-		}
+	    public ScopeController(ScopeStore scopeStore, IScopeValidation validation)
+	    {
+	        _scopeStore = scopeStore;
+	        _validation = validation;
+	    }
 
-		[HttpGet]
+	    [HttpGet]
 		public IHttpActionResult List([ModelBinder(typeof(PagingInformationModelBinder))] PagingInformation pagingInformation)
 		{
 			return Ok(_scopeStore.List(pagingInformation));
@@ -38,7 +41,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 		[HttpPost]
 		public IHttpActionResult Add(Scope scope)
 		{
-            // TODO: Validation
+            _validation.Validate(scope);
 			var newId = _scopeStore.Add(scope);
 
 		    return Ok(newId);
@@ -47,7 +50,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 		[HttpPut]
 		public IHttpActionResult Update(Scope scope)
 		{
-            // TODO: Validation
+            _validation.Validate(scope);
 			_scopeStore.Update(scope);
 
             return StatusCode(HttpStatusCode.NoContent);

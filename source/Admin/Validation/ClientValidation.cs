@@ -14,49 +14,49 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Validation
             _clientStore = clientStore;
         }
 
-        public void Validate(Client client)
+        public void Validate(Client entity)
         {
-            if (client == null)
+            if (entity == null)
             {
                 throw new ApiException(ErrorCodes.NoEntitySubmitted);
             }
 
-            if (String.IsNullOrWhiteSpace(client.ClientId))
+            if (String.IsNullOrWhiteSpace(entity.ClientId))
             {
                 throw new ApiException(ErrorCodes.ClientIdNotSet);
             }
 
-            if (!_clientStore.IsNameAvailable(client))
+            if (!_clientStore.IsNameAvailable(entity))
             {
                 throw new ApiException(ErrorCodes.NameNotAvailable);
             }
 
-            if (String.IsNullOrWhiteSpace(client.ClientName))
+            if (String.IsNullOrWhiteSpace(entity.ClientName))
             {
                 throw new ApiException(ErrorCodes.ClientNameNotSet);
             }
 
-            if (client.AbsoluteRefreshTokenLifetime < 1)
+            if (entity.AbsoluteRefreshTokenLifetime < 1)
             {
                 throw new ApiException(ErrorCodes.ClientAbsoluteRefreshTokenLifetimeCanNotBeLessThanOne);
             }
 
-            if (client.AccessTokenLifetime < 1)
+            if (entity.AccessTokenLifetime < 1)
             {
                 throw new ApiException(ErrorCodes.ClientAccessTokenLifetimeCanNotBeLessThanOne);
             }
 
-            if (client.AuthorizationCodeLifetime < 1)
+            if (entity.AuthorizationCodeLifetime < 1)
             {
                 throw new ApiException(ErrorCodes.ClientAuthorizationCodeLifetimeCanNotBeLessThanOne);
             }
 
-            if (client.IdentityTokenLifetime < 1)
+            if (entity.IdentityTokenLifetime < 1)
             {
                 throw new ApiException(ErrorCodes.ClientIdentityTokenLifetimeCanNotBeLessThanOne);
             }
 
-            if (client.SlidingRefreshTokenLifetime < 1)
+            if (entity.SlidingRefreshTokenLifetime < 1)
             {
                 throw new ApiException(ErrorCodes.ClientSlidingRefreshTokenLifetimeCanNotBeLessThanOne);
             }

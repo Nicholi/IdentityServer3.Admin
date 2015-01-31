@@ -124,7 +124,8 @@
     <Compile Include="Storage\StorageRegistrations.cs" />
     <Compile Include="ThinktectureIdentityServerAdminExtension.cs" />
     <Compile Include="Validation\ClientValidation.cs" />
-    <Compile Include="Validation\IClientValidation.cs" />
+    <Compile Include="Validation\IValidation.cs" />
+    <Compile Include="Validation\ScopeValidation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

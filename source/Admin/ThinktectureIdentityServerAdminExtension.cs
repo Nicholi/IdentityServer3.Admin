@@ -49,13 +49,21 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi
                 .AsWebApiExceptionFilterFor<ApiController>()
 		        .InstancePerRequest();
 
-		    builder.RegisterType<ClientValidation>()
-		        .As<IClientValidation>();
+		    RegisterValidation(builder);
 
 			return builder.Build();
 		}
 
-		private static void ConfigureJson(HttpConfiguration config)
+	    private static void RegisterValidation(ContainerBuilder builder)
+	    {
+	        builder.RegisterType<ClientValidation>()
+	            .As<IClientValidation>();
+
+	        builder.RegisterType<ScopeValidation>()
+	            .As<IScopeValidation>();
+	    }
+
+	    private static void ConfigureJson(HttpConfiguration config)
 		{
 			config.Formatters.Clear();
 			config.Formatters.Add(new JsonMediaTypeFormatter());
