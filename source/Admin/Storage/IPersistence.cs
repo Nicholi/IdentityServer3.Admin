@@ -42,5 +42,12 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
         /// </summary>
         /// <returns></returns>
         int TotalCount();
+
+        /// <summary>
+        /// Checks if a name is available (e.g. for creation of a new entity).
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        bool IsNameAvailable(TEntity entity);
     }
 }

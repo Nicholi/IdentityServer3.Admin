@@ -41,5 +41,10 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
         {
             return _persistence.TotalCount();
         }
+
+        public bool IsNameAvailable(Scope entity)
+        {
+            return _persistence.IsNameAvailable(entity);
+        }
     }
 }

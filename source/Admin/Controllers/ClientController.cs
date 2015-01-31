@@ -3,19 +3,22 @@ using System.Web.Http.ModelBinding;
 using Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence;
 using Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage;
 using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
+using Thinktecture.IdentityServer3.Admin.WebApi.Validation;
 
 namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 {
 	public class ClientController : ApiController
 	{
 		private readonly ClientStore _clientStore;
+	    private readonly IClientValidation _validation;
 
-		public ClientController(ClientStore clientStore)
-		{
-			_clientStore = clientStore;
-		}
+	    public ClientController(ClientStore clientStore, IClientValidation validation)
+	    {
+	        _clientStore = clientStore;
+	        _validation = validation;
+	    }
 
-		[HttpGet]
+	    [HttpGet]
 		public IHttpActionResult List([ModelBinder(typeof(PagingInformationModelBinder))] PagingInformation pagingInformation)
 		{
 			return Ok(_clientStore.List(pagingInformation));
@@ -37,7 +40,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 		[HttpPost]
 		public IHttpActionResult Add(Client client)
 		{
-            // TODO: Validation
+            _validation.Validate(client);
             var newId = _clientStore.Add(client);
 			
 			return Ok(newId);
@@ -46,7 +49,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
 		[HttpPut]
 		public IHttpActionResult Update(Client client)
 		{
-			// TODO: Validation
+            _validation.Validate(client);
             _clientStore.Update(client);
 
 			return Ok();

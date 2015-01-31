@@ -9,6 +9,7 @@ using Newtonsoft.Json.Serialization;
 using Owin;
 using Thinktecture.IdentityServer3.Admin.WebApi.Filters;
 using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
+using Thinktecture.IdentityServer3.Admin.WebApi.Validation;
 
 namespace Thinktecture.IdentityServer3.Admin.WebApi
 {
@@ -47,6 +48,9 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi
 		    builder.RegisterType<ExceptionFilter>()
                 .AsWebApiExceptionFilterFor<ApiController>()
 		        .InstancePerRequest();
+
+		    builder.RegisterType<ClientValidation>()
+		        .As<IClientValidation>();
 
 			return builder.Build();
 		}
