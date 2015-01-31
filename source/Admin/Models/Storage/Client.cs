@@ -26,7 +26,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage
         public virtual TokenUsage RefreshTokenUsage { get; set; }
         public virtual TokenExpiration RefreshTokenExpiration { get; set; }
         public virtual AccessTokenType AccessTokenType { get; set; }
-        public virtual bool AllowLocalLogin { get; set; }
+        public virtual bool EnableLocalLogin { get; set; }
         public virtual ICollection<ClientIdPRestriction> IdentityProviderRestrictions { get; set; }
         public virtual bool IncludeJwtId { get; set; }
         public virtual ICollection<ClientClaim> Claims { get; set; }
