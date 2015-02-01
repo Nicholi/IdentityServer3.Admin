@@ -1,0 +1,10 @@
+<div ui-grid="gridOptions" class="default-grid"></div>
+<div class="row">
+    <div class="col-md-12">
+        <paging
+                page-changed="refresh()"
+                current-page="paging.currentPage"
+                items-per-page="paging.itemsPerPage"
+                total-items="paging.totalItems"></paging>
+    </div>
+</div>

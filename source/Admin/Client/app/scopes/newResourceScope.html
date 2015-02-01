@@ -1,0 +1,20 @@
+<div class="modal-header">
+    <h3 class="modal-title" translate>SCOPES.NEW.TITLE_RESOURCE_SCOPE</h3>
+</div>
+<div class="modal-body">
+    <p translate>SCOPES.NEW.NOTICE</p>
+    <form role="form" name="newScopeForm">
+        <div class="form-group" ng-class="{'has-error': newScopeForm.scopeName.$error.required && newScopeForm.scopeName.$touched}">
+            <label class="control-label" for="scopeName" translate>SCOPES.COMMON.NAME</label>
+            <input type="text" ng-model="scope.name" class="form-control" id="scopeName" name="scopeName" required />
+        </div>
+        <div class="form-group" ng-class="{'has-error': newScopeForm.displayName.$error.required && newScopeForm.displayName.$touched}">
+            <label class="control-label" for="displayName" translate>SCOPES.COMMON.DISPLAY_NAME</label>
+            <input type="text" ng-model="scope.displayName" class="form-control" id="displayName" name="displayName" required/>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" ng-click="ok()" ng-disabled="newScopeForm.$invalid"><i class="fa fa-plus"></i> <span translate>COMMON.OK</span></button>
+    <button class="btn btn-danger" ng-click="cancel()"><i class="fa fa-close"></i> <span translate>COMMON.CANCEL</span></button>
+</div>

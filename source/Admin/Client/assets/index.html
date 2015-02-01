@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="ttIdentityAdmin">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <title>Thinktecture IdentityServer3 Admin</title>
+
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="app.min.css">
+</head>
+<body ng-controller="appController">
+    <div>
+        <navbar></navbar>
+        <spinner key="globalSpinner"></spinner>
+        <div class="container" ui-view="content"></div>
+        <footer-nav></footer-nav>
+    </div>
+
+    <script src="lib.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

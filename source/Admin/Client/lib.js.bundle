@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+  <settings>
+    <!--Determines if the bundle file should be automatically optimized after creation/update.-->
+    <minify>true</minify>
+    <!--Determine whether to generate/re-generate this bundle on building the solution.-->
+    <runOnBuild>true</runOnBuild>
+    <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
+    <outputDirectory>assets</outputDirectory>
+  </settings>
+  <!--The order of the <file> elements determines the order of the files in the bundle.-->
+  <files>
+    <file>libs/05_fastclick/fastclick.js</file>
+    <file>libs/06_jquery/jquery.js</file>
+    <file>libs/07_underscore-js/underscore.js</file>
+    <file>libs/10_bootstrap/bootstrap.js</file>
+    <file>libs/20_angularjs/angular.js</file>
+    <file>libs/21_angular-extras/angular-locale_de-de.js</file>
+    <file>libs/21_ui-router/angular-ui-router.js</file>
+    <file>libs/22_ui-grid/ui-grid-unstable.js</file>
+    <file>libs/23_angular-toggle-toggle/angular-bootstrap-toggle.js</file>
+    <file>libs/25_angular-translate/angular-translate.js</file>
+    <file>libs/26_angular-xeditable/xeditable.js</file>
+    <file>libs/27_ui-bootstrap/ui-bootstrap-tpls-0.12.0.js</file>
+    <file>libs/28_angular-spinner/angular-spinner.js</file>
+    <file>libs/28_angular-spinner/spin.js</file>
+    <file>libs/52_pnotify/pnotify.custom.js</file>
+    <file>libs/52_pnotify/pnotify.js</file>
+    <file>libs/99_appInit/appInit.js</file>
+  </files>
+</bundle>

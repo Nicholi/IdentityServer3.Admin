@@ -1,0 +1,101 @@
+<div class="page-header">
+    <h1 translate>SCOPES.DETAILS.TITLE</h1>
+</div>
+<div class="row row-margin-bottom">
+    <div class="col-md-12">
+        <button class="btn btn-danger" ng-click="delete()"><i class="fa fa-trash"></i> <span translate>COMMON.DELETE</span></button>
+    </div>
+</div>
+
+<table class="table table-striped scopeDetailTable" ng-if="scope">
+    <thead>
+    <tr>
+        <th>{{ 'SCOPES.DETAILS.SETTING' | translate }}</th>
+        <th>{{ 'SCOPES.DETAILS.VALUE' | translate }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.ENABLED">{{ 'SCOPES.COMMON.ENABLED' | translate }}</span></td>
+        <td>
+            <on-off-toggle toggle="save()" ng-model="scope.enabled"></on-off-toggle>
+        </td>
+    </tr>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.NAME">{{ 'SCOPES.COMMON.NAME' | translate }}</span></td>
+        <td><a href="#" editable-text="scope.name" e-required onaftersave="save()">{{ scope.name }}</a></td>
+    </tr>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.DISPLAY_NAME">{{ 'SCOPES.COMMON.DISPLAY_NAME' | translate }}</span></td>
+        <td><a href="#" editable-text="scope.displayName" e-required onaftersave="save()">{{ scope.displayName }}</a></td>
+    </tr>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.DESCRIPTION">{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</span></td>
+        <td><a href="#" editable-text="scope.description" onaftersave="save()">{{ scope.description || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
+    </tr>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.TYPE">{{ 'SCOPES.COMMON.TYPE' | translate }}</span></td>
+        <td><a href="#" editable-select="scope.type" e-ng-options="item.value.enumValue as item.value.text for item in scopeTypes" onaftersave="save()">{{ showScopeType() }}</a></td>
+    </tr>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.CLAIMS_RULE">{{ 'SCOPES.COMMON.CLAIMS_RULE' | translate }}</span></td>
+        <td><a href="#" editable-text="scope.claimsRule" onaftersave="save()">{{ scope.claimsRule || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
+    </tr>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.REQUIRED">{{ 'SCOPES.COMMON.REQUIRED' | translate }}</span></td>
+        <td>
+            <yes-no-toggle toggle="save()" ng-model="scope.required"></yes-no-toggle>
+        </td>
+    </tr>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.EMPHASIZE">{{ 'SCOPES.COMMON.EMPHASIZE' | translate }}</span></td>
+        <td>
+            <yes-no-toggle toggle="save()" ng-model="scope.emphasize"></yes-no-toggle>
+        </td>
+    </tr>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.INCLUDE_ALL_CLAIMS_FOR_USER">{{ 'SCOPES.COMMON.INCLUDE_ALL_CLAIMS_FOR_USER' | translate }}</span></td>
+        <td>
+            <yes-no-toggle toggle="save()" ng-model="scope.includeAllClaimsForUser"></yes-no-toggle>
+        </td>
+    </tr>
+    <tr>
+        <td><span documentation-tooltip="SCOPES.SHOW_IN_DISCOVERY_DOCUMENT">{{ 'SCOPES.COMMON.SHOW_IN_DISCOVERY_DOCUMENT' | translate }}</span></td>
+        <td>
+            <yes-no-toggle toggle="save()" ng-model="scope.showInDiscoveryDocument"></yes-no-toggle>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<h2 translate>SCOPES.COMMON.CLAIMS</h2>
+<div class="row">
+    <div class="col-md-12">
+        <button class="btn btn-success" ng-click="newScopeClaim()"><i class="fa fa-plus"></i> <span translate>COMMON.NEW</span></button>
+    </div>
+</div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th><span documentation-tooltip="SCOPE_CLAIMS.NAME">{{ 'SCOPES.COMMON.NAME' | translate }}</span></th>
+        <th><span documentation-tooltip="SCOPE_CLAIMS.DESCRIPTION">{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</span></th>
+        <th><span documentation-tooltip="SCOPE_CLAIMS.ALWAYS_INCLUDE_IN_ID_TOKEN">{{ 'SCOPES.DETAILS.ALWAYS_INCLUDE_IN_ID_TOKEN' | translate }}</span></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="claim in scope.scopeClaims">
+        <td><a href="#" editable-text="claim.name" e-required onaftersave="save()">{{ claim.name }}</a></td>
+        <td><a href="#" editable-text="claim.description" onaftersave="save()">{{ claim.description }}</a></td>
+        <td>
+            <yes-no-toggle ng-model="claim.alwaysIncludeInIdToken" toggle="save()" ></yes-no-toggle>
+        </td>
+        <td>
+            <button ng-click="removeScopeClaim($index)"><i class="fa fa-trash"></i></button>
+        </td>
+    </tr>
+    <tr ng-show="scope.scopeClaims.length === 0">
+        <td colspan="4" class="text-center">{{ 'SCOPES.DETAILS.NO_CLAIMS' | translate }}</td>
+    </tr>
+    </tbody>
+</table>

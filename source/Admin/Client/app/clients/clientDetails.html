@@ -1,0 +1,191 @@
+<div class="page-header">
+    <h1 translate>CLIENTS.DETAILS.TITLE</h1>
+</div>
+
+<div class="row row-margin-bottom">
+    <div class="col-md-12">
+        <button class="btn btn-danger" ng-click="delete()"><i class="fa fa-trash"></i> <span translate>COMMON.DELETE</span></button>
+    </div>
+</div>
+
+<tabset ng-if="client">
+    <tab>
+        <tab-heading translate>CLIENTS.DETAILS.TABS.GENERAL</tab-heading>
+        <table class="table table-striped clientDetailTable">
+            <thead>
+            <tr>
+                <th>{{ 'CLIENTS.DETAILS.SETTING' | translate }}</th>
+                <th>{{ 'CLIENTS.DETAILS.VALUE' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.ENABLED">{{ 'CLIENTS.COMMON.ENABLED' | translate }}</span></td>
+                <td>
+                    <on-off-toggle toggle="save()" ng-model="client.enabled"></on-off-toggle>
+                </td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.NAME">{{ 'CLIENTS.COMMON.CLIENT_NAME' | translate }}</span></td>
+                <td><a href="#" editable-text="client.clientName" e-required onaftersave="save()">{{ client.clientName }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.ID">{{ 'CLIENTS.COMMON.CLIENT_ID' | translate }}</span></td>
+                <td><a href="#" editable-text="client.clientId" e-required onaftersave="save()">{{ client.clientId }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.URI">{{ 'CLIENTS.COMMON.CLIENT_URI' | translate }}</span></td>
+                <td><a href="#" editable-text="client.clientUri" onaftersave="save()">{{ client.clientUri || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.LOGO_URI">{{ 'CLIENTS.COMMON.LOGO_URI' | translate }}</span></td>
+                <td><a href="#" editable-text="client.logoUri" onaftersave="save()">{{ client.logoUri || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.FLOW">{{ 'CLIENTS.COMMON.FLOW' | translate }}</span></td>
+                <td><a href="#" editable-select="client.flow" e-ng-options="item.value.enumValue as item.value.text for item in flows" onaftersave="save()">{{ showFlows() }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.REQUIRE_CONSENT">{{ 'CLIENTS.COMMON.REQUIRE_CONSENT' | translate }}</span></td>
+                <td>
+                    <yes-no-toggle toggle="save()" ng-model="client.requireConsent"></yes-no-toggle>
+                </td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.ALLOW_REMEMBER_CONSENT">{{ 'CLIENTS.COMMON.ALLOW_REMEMBER_CONSENT' | translate }}</span></td>
+                <td>
+                    <yes-no-toggle toggle="save()" ng-model="client.allowRememberConsent"></yes-no-toggle>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2><span documentation-tooltip="CLIENTS.SECRETS">{{ 'CLIENTS.COMMON.CLIENT_SECRETS' | translate }}</span></h2>
+        <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CLIENT_SECRETS" data="client.clientSecrets" property="description"></client-details-table>
+    </tab>
+    <tab>
+        <tab-heading translate>CLIENTS.DETAILS.TABS.URIS_AND_RESTRICTIONS</tab-heading>
+        <table class="table table-striped clientDetailTable">
+            <thead>
+            <tr>
+                <th>{{ 'CLIENTS.DETAILS.SETTING' | translate }}</th>
+                <th>{{ 'CLIENTS.DETAILS.VALUE' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.ENABLE_LOCAL_LOGIN">{{ 'CLIENTS.COMMON.ENABLE_LOCAL_LOGIN' | translate }}</span></td>
+                <td>
+                    <yes-no-toggle toggle="save()" ng-model="client.enableLocalLogin"></yes-no-toggle>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <tabset>
+            <tab>
+                <tab-heading translate>CLIENTS.COMMON.REDIRECT_URIS</tab-heading>
+
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_REDIRECT_URIS" data="client.redirectUris" property="uri"></client-details-table>
+            </tab>
+            <tab>
+                <tab-heading translate>CLIENTS.COMMON.POST_LOGOUT_REDIRECT_URIS</tab-heading>
+
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_POST_LOGOUT_REDIRECT_URIS" data="client.postLogoutRedirectUris" property="uri"></client-details-table>
+            </tab>
+            <tab>
+                <tab-heading translate>CLIENTS.COMMON.SCOPE_RESTRICTIONS</tab-heading>
+
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_SCOPE_RESTRICTIONS" data="client.scopeRestrictions" property="scope"></client-details-table>
+            </tab>
+            <tab>
+                <tab-heading translate>CLIENTS.COMMON.IDENTITY_PROVIDER_RESTRICTIONS</tab-heading>
+
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_IDENTITY_PROVIDER_RESTRICTIONS" data="client.identityProviderRestrictions" property="provider"></client-details-table>
+            </tab>
+            <tab>
+                <tab-heading translate>CLIENTS.COMMON.CUSTOM_GRANT_TYPE_RESTRICTIONS</tab-heading>
+
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CUSTOM_GRANT_TYPE_RESTRICTIONS" data="client.customGrantTypeRestrictions" property="grantType"></client-details-table>
+            </tab>
+        </tabset>
+    </tab>
+    <tab>
+        <tab-heading translate>CLIENTS.DETAILS.TABS.TOKENS_AND_LIFETIME</tab-heading>
+        <table class="table table-striped clientDetailTable">
+            <thead>
+            <tr>
+                <th>{{ 'CLIENTS.DETAILS.SETTING' | translate }}</th>
+                <th>{{ 'CLIENTS.DETAILS.VALUE' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.IDENTITY_TOKEN_LIFETIME">{{ 'CLIENTS.COMMON.IDENTITY_TOKEN_LIFETIME' | translate }}</span></td>
+                <td><a href="#" editable-lifetime="client.identityTokenLifetime" e-min="1" e-required onaftersave="save()">{{ client.identityTokenLifetime }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.ACCESS_TOKEN_LIFETIME">{{ 'CLIENTS.COMMON.ACCESS_TOKEN_LIFETIME' | translate }}</span></td>
+                <td><a href="#" editable-lifetime="client.accessTokenLifetime" e-min="1" e-required onaftersave="save()">{{ client.accessTokenLifetime }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.AUTHORIZATION_CODE_LIFETIME">{{ 'CLIENTS.COMMON.AUTHORIZATION_CODE_LIFETIME' | translate }}</span></td>
+                <td><a href="#" editable-lifetime="client.authorizationCodeLifetime" e-min="1" e-required onaftersave="save()">{{ client.authorizationCodeLifetime }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.ABSOLUTE_REFRESH_TOKEN_LIFETIME">{{ 'CLIENTS.COMMON.ABSOLUTE_REFRESH_TOKEN_LIFETIME' | translate }}</span></td>
+                <td><a href="#" editable-lifetime="client.absoluteRefreshTokenLifetime" e-min="1" e-required onaftersave="save()">{{ client.absoluteRefreshTokenLifetime }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.SLIDING_REFRESH_TOKEN_LIFETIME">{{ 'CLIENTS.COMMON.SLIDING_REFRESH_TOKEN_LIFETIME' | translate }}</span></td>
+                <td><a href="#" editable-lifetime="client.slidingRefreshTokenLifetime" e-min="1" e-required onaftersave="save()">{{ client.slidingRefreshTokenLifetime }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.REFRESH_TOKEN_USAGE">{{ 'CLIENTS.COMMON.REFRESH_TOKEN_USAGE' | translate }}</span></td>
+                <td><a href="#" editable-select="client.refreshTokenUsage" e-ng-options="item.value.enumValue as item.value.text for item in tokenUsage" onaftersave="save()">{{ showTokenUsage() }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.REFRESH_TOKEN_EXPIRATION">{{ 'CLIENTS.COMMON.REFRESH_TOKEN_EXPIRATION' | translate }}</span></td>
+                <td><a href="#" editable-select="client.refreshTokenExpiration" e-ng-options="item.value.enumValue as item.value.text for item in tokenExpiration" onaftersave="save()">{{ showTokenExpiration() }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.ACCESS_TOKEN_TYPE">{{ 'CLIENTS.COMMON.ACCESS_TOKEN_TYPE' | translate }}</span></td>
+                <td><a href="#" editable-select="client.accessTokenType" e-ng-options="item.value.enumValue as item.value.text for item in accessTokenType" onaftersave="save()">{{ showAccessTokenType() }}</a></td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.INCLUDE_JWT_ID">{{ 'CLIENTS.COMMON.INCLUDE_JWT_ID' | translate }}</span></td>
+                <td>
+                    <yes-no-toggle toggle="save()" ng-model="client.includeJwtId"></yes-no-toggle>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </tab>
+    <tab>
+        <tab-heading translate>CLIENTS.DETAILS.TABS.CLIENT_CLAIMS</tab-heading>
+        <table class="table table-striped clientDetailTable">
+            <thead>
+            <tr>
+                <th>{{ 'CLIENTS.DETAILS.SETTING' | translate }}</th>
+                <th>{{ 'CLIENTS.DETAILS.VALUE' | translate }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.ALWAYS_SEND_CLIENT_CLAIMS">{{ 'CLIENTS.COMMON.ALWAYS_SEND_CLIENT_CLAIMS' | translate }}</span></td>
+                <td>
+                    <yes-no-toggle toggle="save()" ng-model="client.alwaysSendClientClaims"></yes-no-toggle>
+                </td>
+            </tr>
+            <tr>
+                <td><span documentation-tooltip="CLIENTS.PREFIX_CLIENT_CLAIMS">{{ 'CLIENTS.COMMON.PREFIX_CLIENT_CLAIMS' | translate }}</span></td>
+                <td>
+                    <yes-no-toggle toggle="save()" ng-model="client.prefixClientClaims"></yes-no-toggle>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h2 translate>CLIENTS.COMMON.CLAIMS</h2>
+        <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CLAIMS" data="client.claims" property="type"></client-details-table>
+    </tab>
+</tabset>

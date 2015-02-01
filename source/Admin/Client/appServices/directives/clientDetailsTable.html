@@ -1,0 +1,10 @@
+<table class="table table-striped">
+    <tbody>
+    <tr ng-repeat="item in data">
+        <td>{{ $eval(propertyExpression) }}</td>
+    </tr>
+    <tr ng-hide="data && data.length > 0">
+        <td class="text-center">{{ noDataTranslationKey | translate }}</td>
+    </tr>
+    </tbody>
+</table>

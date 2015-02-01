@@ -1,0 +1,14 @@
+<div class="page-header">
+    <h1 translate>SCOPES.OVERVIEW.TITLE</h1>
+</div>
+
+<div class="row row-margin-bottom">
+    <div class="col-md-2">
+        <button class="btn btn-primary" ng-click="newIdentityScope()"><i class="fa fa-user"></i> <span translate>SCOPES.OVERVIEW.NEW_IDENTITY_SCOPE</span></button>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-primary" ng-click="newResourceScope()"><i class="fa fa-cog"></i> <span translate>SCOPES.OVERVIEW.NEW_RESOURCE_SCOPE</span></button>
+    </div>
+</div>
+
+<default-grid on-refresh="refresh" columns="columns"></default-grid>

@@ -7,8 +7,8 @@
     <ProjectGuid>{B10F2838-3C3C-4007-A0CD-96F7A5735F73}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Thinktecture.IdentityServer3.Admin.WebApi</RootNamespace>
-    <AssemblyName>Thinktecture.IdentityServer3.Admin.WebApi</AssemblyName>
+    <RootNamespace>Thinktecture.IdentityServer3.Admin</RootNamespace>
+    <AssemblyName>Thinktecture.IdentityServer3.Admin</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -52,6 +52,12 @@
     </Reference>
     <Reference Include="Microsoft.Owin.Cors">
       <HintPath>..\packages\Microsoft.Owin.Cors.3.0.0\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems">
+      <HintPath>..\packages\Microsoft.Owin.FileSystems.3.0.0\lib\net45\Microsoft.Owin.FileSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles">
+      <HintPath>..\packages\Microsoft.Owin.StaticFiles.3.0.0\lib\net45\Microsoft.Owin.StaticFiles.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -132,7 +138,159 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Client\app.css.bundle" />
+    <EmbeddedResource Include="Client\assets\lib.min.js.map">
+      <DependentUpon>lib.min.js</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Client\lib.js.bundle" />
+    <None Include="Client\app.js.bundle" />
+    <None Include="Client\less\app.less" />
+    <None Include="Client\libs\02_font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="Client\libs\02_font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="Client\libs\02_font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="Client\libs\02_font-awesome\fonts\FontAwesome.otf" />
+    <None Include="Client\libs\02_font-awesome\less\bordered-pulled.less" />
+    <None Include="Client\libs\02_font-awesome\less\core.less" />
+    <None Include="Client\libs\02_font-awesome\less\fixed-width.less" />
+    <None Include="Client\libs\02_font-awesome\less\font-awesome.less" />
+    <None Include="Client\libs\02_font-awesome\less\icons.less" />
+    <None Include="Client\libs\02_font-awesome\less\larger.less" />
+    <None Include="Client\libs\02_font-awesome\less\list.less" />
+    <None Include="Client\libs\02_font-awesome\less\mixins.less" />
+    <None Include="Client\libs\02_font-awesome\less\path.less" />
+    <None Include="Client\libs\02_font-awesome\less\rotated-flipped.less" />
+    <None Include="Client\libs\02_font-awesome\less\spinning.less" />
+    <None Include="Client\libs\02_font-awesome\less\stacked.less" />
+    <None Include="Client\libs\02_font-awesome\less\variables.less" />
+    <None Include="Client\libs\02_font-awesome\scss\font-awesome.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_core.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_fixed-width.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_icons.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_larger.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_list.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_mixins.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_path.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_spinning.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_stacked.scss" />
+    <None Include="Client\libs\02_font-awesome\scss\_variables.scss" />
+    <None Include="Client\libs\10_bootstrap\bootstrap-theme.css.map" />
+    <None Include="Client\libs\10_bootstrap\bootstrap.css.map" />
+    <None Include="Client\libs\10_bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Client\libs\10_bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Client\libs\10_bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Client\libs\10_bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Client\libs\22_ui-grid\ui-grid.eot" />
+    <None Include="Client\libs\22_ui-grid\ui-grid.ttf" />
+    <None Include="Client\libs\22_ui-grid\ui-grid.woff" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Client\appServices\appConfiguration.js" />
+    <Content Include="Client\appServices\directives\clientDetailsTable.html" />
+    <Content Include="Client\appServices\directives\clientDetailsTable.js" />
+    <Content Include="Client\appServices\directives\defaultGrid.html" />
+    <Content Include="Client\appServices\directives\defaultGrid.js" />
+    <Content Include="Client\appServices\directives\documentationTooltip.js" />
+    <Content Include="Client\appServices\directives\footerNav.html" />
+    <Content Include="Client\appServices\directives\footerNav.js" />
+    <Content Include="Client\appServices\directives\navbar.html" />
+    <Content Include="Client\appServices\directives\navbar.js" />
+    <Content Include="Client\appServices\directives\onOffToggle.html" />
+    <Content Include="Client\appServices\directives\onOffToggle.js" />
+    <Content Include="Client\appServices\directives\paging.html" />
+    <Content Include="Client\appServices\directives\paging.js" />
+    <Content Include="Client\appServices\directives\spinner.html" />
+    <Content Include="Client\appServices\directives\spinner.js" />
+    <Content Include="Client\appServices\directives\yesNoToggle.html" />
+    <Content Include="Client\appServices\directives\yesNoToggle.js" />
+    <Content Include="Client\appServices\routing.js" />
+    <Content Include="Client\appServices\run.js" />
+    <Content Include="Client\appServices\services\cellTemplate.js" />
+    <Content Include="Client\appServices\services\clientsWebApi.js" />
+    <Content Include="Client\appServices\services\configuration.js" />
+    <Content Include="Client\appServices\services\confirmDialog.js" />
+    <Content Include="Client\appServices\services\dashboardWebApi.js" />
+    <Content Include="Client\appServices\services\documentation.js" />
+    <Content Include="Client\appServices\services\editableLifetime.js" />
+    <Content Include="Client\appServices\services\lookupContainer.js" />
+    <Content Include="Client\appServices\services\scopesWebApi.js" />
+    <Content Include="Client\appServices\services\spinnerService.js" />
+    <Content Include="Client\appServices\services\uiGridHelper.js" />
+    <Content Include="Client\appServices\services\uiHelper.js" />
+    <Content Include="Client\appServices\services\webApi.js" />
+    <Content Include="Client\app\appController.js" />
+    <Content Include="Client\app\clients\clientDetails.html" />
+    <Content Include="Client\app\clients\clientDetails.js" />
+    <Content Include="Client\app\clients\clientOverview.html" />
+    <Content Include="Client\app\clients\clientOverview.js" />
+    <Content Include="Client\app\clients\newClient.html" />
+    <Content Include="Client\app\clients\newClient.js" />
+    <Content Include="Client\app\scopes\newIdentityScope.html" />
+    <Content Include="Client\app\scopes\newIdentityScope.js" />
+    <Content Include="Client\app\scopes\newResourceScope.html" />
+    <Content Include="Client\app\scopes\newResourceScope.js" />
+    <Content Include="Client\app\scopes\newScopeClaim.html" />
+    <Content Include="Client\app\scopes\newScopeClaim.js" />
+    <Content Include="Client\app\scopes\scopeDetails.html" />
+    <Content Include="Client\app\scopes\scopeDetails.js" />
+    <Content Include="Client\app\scopes\scopeOverview.html" />
+    <Content Include="Client\app\scopes\scopeOverview.js" />
+    <Content Include="Client\app\start\start.html" />
+    <Content Include="Client\app\start\start.js" />
+    <Content Include="Client\app\translations\translations-en.js" />
+    <Content Include="Client\assets\app.css" />
+    <EmbeddedResource Include="Client\assets\app.js" />
+    <EmbeddedResource Include="Client\assets\app.min.css">
+      <DependentUpon>app.css</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Client\assets\lib.js" />
+    <EmbeddedResource Include="Client\assets\lib.min.js">
+      <DependentUpon>lib.js</DependentUpon>
+    </EmbeddedResource>
+    <Content Include="Client\less\app.css">
+      <DependentUpon>app.less</DependentUpon>
+    </Content>
+    <Content Include="Client\less\app.min.css">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
+    <EmbeddedResource Include="Client\assets\favicon.ico" />
+    <EmbeddedResource Include="Client\assets\GitHub_Logo.png" />
+    <EmbeddedResource Include="Client\assets\thinktecture_logo.png" />
+    <EmbeddedResource Include="Client\assets\index.html" />
+    <Content Include="Client\libs\02_font-awesome\css\font-awesome.css" />
+    <Content Include="Client\libs\02_font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Client\libs\05_fastclick\fastclick.js" />
+    <Content Include="Client\libs\06_jquery\jquery.js" />
+    <Content Include="Client\libs\07_underscore-js\underscore.js" />
+    <Content Include="Client\libs\10_bootstrap\bootstrap-theme.css" />
+    <Content Include="Client\libs\10_bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Client\libs\10_bootstrap\bootstrap.css" />
+    <Content Include="Client\libs\10_bootstrap\bootstrap.js" />
+    <Content Include="Client\libs\10_bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Client\libs\20_angularjs\angular.js" />
+    <Content Include="Client\libs\21_angular-extras\angular-locale_de-de.js" />
+    <Content Include="Client\libs\21_ui-router\angular-ui-router.js" />
+    <Content Include="Client\libs\22_ui-grid\ui-grid-unstable.css" />
+    <Content Include="Client\libs\22_ui-grid\ui-grid-unstable.js" />
+    <Content Include="Client\libs\22_ui-grid\ui-grid.svg" />
+    <Content Include="Client\libs\23_angular-toggle-toggle\angular-bootstrap-toggle.css" />
+    <Content Include="Client\libs\23_angular-toggle-toggle\angular-bootstrap-toggle.js" />
+    <Content Include="Client\libs\25_angular-translate\angular-translate.js" />
+    <Content Include="Client\libs\26_angular-xeditable\xeditable.css" />
+    <Content Include="Client\libs\26_angular-xeditable\xeditable.js" />
+    <Content Include="Client\libs\27_ui-bootstrap\ui-bootstrap-tpls-0.12.0.js" />
+    <Content Include="Client\libs\28_angular-spinner\angular-spinner.js" />
+    <Content Include="Client\libs\28_angular-spinner\spin.js" />
+    <Content Include="Client\libs\52_pnotify\pnotify.custom.css" />
+    <Content Include="Client\libs\52_pnotify\pnotify.custom.js" />
+    <Content Include="Client\libs\52_pnotify\pnotify.js" />
+    <Content Include="Client\libs\99_appInit\appInit.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Client\appServices\filters\" />
+    <Folder Include="Client\libs\23_angular-toggle-switch\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets')" />

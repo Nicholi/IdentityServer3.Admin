@@ -10,6 +10,9 @@ using Owin;
 using Thinktecture.IdentityServer3.Admin.WebApi.Filters;
 using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
 using Thinktecture.IdentityServer3.Admin.WebApi.Validation;
+using Microsoft.Owin;
+using Microsoft.Owin.FileSystems;
+using Microsoft.Owin.StaticFiles;
 
 namespace Thinktecture.IdentityServer3.Admin.WebApi
 {
@@ -17,6 +20,11 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi
 	{
 		public static void UseThinktectureIdentityServerAdmin(this IAppBuilder app, StorageOptions storageOptions)
 		{
+            app.UseFileServer(new FileServerOptions
+            {
+                FileSystem = new EmbeddedResourceFileSystem(typeof(ThinktectureIdentityServerAdminExtension).Assembly, "Thinktecture.IdentityServer3.Admin.Client.assets"),
+            });
+
 		    var httpConfiguration = new HttpConfiguration();
 			var container = RegisterServices(httpConfiguration, storageOptions);
 

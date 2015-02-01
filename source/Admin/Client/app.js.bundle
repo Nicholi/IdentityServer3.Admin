@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+  <settings>
+    <!--Determines if the bundle file should be automatically optimized after creation/update.-->
+    <minify>false</minify>
+    <!--Determine whether to generate/re-generate this bundle on building the solution.-->
+    <runOnBuild>true</runOnBuild>
+    <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
+    <outputDirectory>assets</outputDirectory>
+  </settings>
+  <!--The order of the <file> elements determines the order of the files in the bundle.-->
+  <files>
+    <file>app/clients/clientDetails.js</file>
+    <file>app/clients/clientOverview.js</file>
+    <file>app/clients/newClient.js</file>
+    <file>app/scopes/newIdentityScope.js</file>
+    <file>app/scopes/newResourceScope.js</file>
+    <file>app/scopes/newScopeClaim.js</file>
+    <file>app/scopes/scopeDetails.js</file>
+    <file>app/scopes/scopeOverview.js</file>
+    <file>app/start/start.js</file>
+    <file>app/translations/translations-en.js</file>
+    <file>app/appController.js</file>
+    <file>appServices/directives/clientDetailsTable.js</file>
+    <file>appServices/directives/defaultGrid.js</file>
+    <file>appServices/directives/documentationTooltip.js</file>
+    <file>appServices/directives/footerNav.js</file>
+    <file>appServices/directives/navbar.js</file>
+    <file>appServices/directives/onOffToggle.js</file>
+    <file>appServices/directives/paging.js</file>
+    <file>appServices/directives/spinner.js</file>
+    <file>appServices/directives/yesNoToggle.js</file>
+    <file>appServices/services/cellTemplate.js</file>
+    <file>appServices/services/clientsWebApi.js</file>
+    <file>appServices/services/configuration.js</file>
+    <file>appServices/services/confirmDialog.js</file>
+    <file>appServices/services/dashboardWebApi.js</file>
+    <file>appServices/services/documentation.js</file>
+    <file>appServices/services/editableLifetime.js</file>
+    <file>appServices/services/lookupContainer.js</file>
+    <file>appServices/services/scopesWebApi.js</file>
+    <file>appServices/services/spinnerService.js</file>
+    <file>appServices/services/uiGridHelper.js</file>
+    <file>appServices/services/uiHelper.js</file>
+    <file>appServices/services/webApi.js</file>
+    <file>appServices/appConfiguration.js</file>
+    <file>appServices/routing.js</file>
+    <file>appServices/run.js</file>
+  </files>
+</bundle>
