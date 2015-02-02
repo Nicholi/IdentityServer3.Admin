@@ -242,7 +242,7 @@
     <EmbeddedResource Include="Client\assets\app.min.css">
       <DependentUpon>app.css</DependentUpon>
     </EmbeddedResource>
-    <Content Include="Client\assets\lib.js" />
+    <EmbeddedResource Include="Client\assets\lib.js" />
     <Content Include="Client\less\app.css">
       <DependentUpon>app.less</DependentUpon>
     </Content>
