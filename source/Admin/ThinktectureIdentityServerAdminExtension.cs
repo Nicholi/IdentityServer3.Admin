@@ -20,24 +20,29 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi
 	{
 		public static void UseThinktectureIdentityServerAdmin(this IAppBuilder app, StorageOptions storageOptions)
 		{
-            app.UseFileServer(new FileServerOptions
-            {
-                FileSystem = new EmbeddedResourceFileSystem(typeof(ThinktectureIdentityServerAdminExtension).Assembly, "Thinktecture.IdentityServer3.Admin.Client.assets"),
-            });
-
 		    var httpConfiguration = new HttpConfiguration();
 			var container = RegisterServices(httpConfiguration, storageOptions);
 
             app.UseCors(CorsOptions.AllowAll);
 			SetupHttpConfiguration(httpConfiguration, container);
 
+            ConfigureFileServer(app);
             ConfigureJson(httpConfiguration);
 			ConfigureRoutes(httpConfiguration);
 
 			app.UseWebApi(httpConfiguration);
 		}
 
-		private static void SetupHttpConfiguration(HttpConfiguration configuration, IContainer container)
+	    private static void ConfigureFileServer(IAppBuilder app)
+	    {
+	        app.UseFileServer(new FileServerOptions
+	        {
+	            FileSystem =
+	                new EmbeddedResourceFileSystem(typeof (ThinktectureIdentityServerAdminExtension).Assembly, "Thinktecture.IdentityServer3.Admin.Client.assets"),
+	        });
+	    }
+
+	    private static void SetupHttpConfiguration(HttpConfiguration configuration, IContainer container)
 		{
 		    configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
 		    configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
