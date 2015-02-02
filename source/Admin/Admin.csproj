@@ -139,9 +139,6 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="Client\app.css.bundle" />
-    <EmbeddedResource Include="Client\assets\lib.min.js.map">
-      <DependentUpon>lib.min.js</DependentUpon>
-    </EmbeddedResource>
     <None Include="Client\lib.js.bundle" />
     <None Include="Client\app.js.bundle" />
     <None Include="Client\less\app.less" />
@@ -246,9 +243,6 @@
       <DependentUpon>app.css</DependentUpon>
     </EmbeddedResource>
     <Content Include="Client\assets\lib.js" />
-    <EmbeddedResource Include="Client\assets\lib.min.js">
-      <DependentUpon>lib.js</DependentUpon>
-    </EmbeddedResource>
     <Content Include="Client\less\app.css">
       <DependentUpon>app.less</DependentUpon>
     </Content>
