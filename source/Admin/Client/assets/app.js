@@ -134,7 +134,7 @@
 
         $scope.newClient = function () {
             var modal = $modal.open({
-                templateUrl: 'app/clients/newClient.html',
+                templateUrl: 'html/app/clients/newClient.html',
                 controller: 'newClientController',
                 backdrop: 'static'
             });
@@ -510,7 +510,7 @@
 
         $scope.newIdentityScope = function () {
             newScope({
-                templateUrl: 'app/scopes/newIdentityScope.html',
+                templateUrl: 'html/app/scopes/newIdentityScope.html',
                 controller: 'newIdentityScopeController',
                 backdrop: 'static'
             });
@@ -518,7 +518,7 @@
 
         $scope.newResourceScope = function () {
             newScope({
-                templateUrl: 'app/scopes/newResourceScope.html',
+                templateUrl: 'html/app/scopes/newResourceScope.html',
                 controller: 'newResourceScopeController',
                 backdrop: 'static'
             });
@@ -930,7 +930,7 @@ window.thinktecture.translations.en = {
             scope: {
                 data: '='
             },
-            templateUrl: 'appServices/directives/clientDetailsTable.html',
+            templateUrl: 'html/appServices/directives/clientDetailsTable.html',
             link: function (scope, element, attrs) {
                 scope.propertyExpression = 'item';
                 scope.noDataTranslationKey = 'COMMON.NO_DATA';
@@ -958,7 +958,7 @@ window.thinktecture.translations.en = {
                 onRefresh: '&',
                 columns: '='
             },
-            templateUrl: 'appServices/directives/defaultGrid.html',
+            templateUrl: 'html/appServices/directives/defaultGrid.html',
             link: function (scope, element, attrs) {
                 var pagingInformation = {
                     itemsPerPage: 10,
@@ -1038,7 +1038,7 @@ window.thinktecture.translations.en = {
     app.module.directive('footerNav', function () {
         return {
             restrict: 'E',
-            templateUrl: 'appServices/directives/footerNav.html'
+            templateUrl: 'html/appServices/directives/footerNav.html'
         }
     });
 })();
@@ -1050,7 +1050,7 @@ window.thinktecture.translations.en = {
     app.module.directive('navbar', function () {
         return {
             restrict: 'E',
-            templateUrl: 'appServices/directives/navbar.html',
+            templateUrl: 'html/appServices/directives/navbar.html',
             link: function (scope, element, attrs) {
 
             }
@@ -1070,7 +1070,7 @@ window.thinktecture.translations.en = {
                 ngModel: '=',
                 toggle: '&'
             },
-            templateUrl: 'appServices/directives/onOffToggle.html'
+            templateUrl: 'html/appServices/directives/onOffToggle.html'
         }
     });
 })();
@@ -1088,7 +1088,7 @@ window.thinktecture.translations.en = {
                 totalItems: '=',
                 itemsPerPage: '='
             },
-            templateUrl: 'appServices/directives/paging.html',
+            templateUrl: 'html/appServices/directives/paging.html',
             link: {
                 pre: function (scope, element, attrs) {
                     if (!attrs.itemsPerPage) {
@@ -1119,7 +1119,7 @@ window.thinktecture.translations.en = {
             scope: {
                 key: '@'
             },
-            templateUrl: 'appServices/directives/spinner.html'
+            templateUrl: 'html/appServices/directives/spinner.html'
         }
     });
 })();
@@ -1136,7 +1136,7 @@ window.thinktecture.translations.en = {
                 ngModel: '=',
                 toggle: '&'
             },
-            templateUrl: 'appServices/directives/yesNoToggle.html'
+            templateUrl: 'html/appServices/directives/yesNoToggle.html'
         }
     });
 })();
@@ -1233,7 +1233,7 @@ window.thinktecture.translations.en = {
 
         this.apiBaseUrl = function () {
             // TODO: This value must be set accordingly later on
-            return 'http://windows8vm.local:9010/';
+            return '/';
         };
 
     }
@@ -1853,7 +1853,7 @@ window.thinktecture.translations.en = {
                 url: '/',
                 views: {
                     'content@': {
-                        templateUrl: 'app/start/start.html',
+                        templateUrl: 'html/app/start/start.html',
                         controller: 'startController'
                     }
                 }
@@ -1866,7 +1866,7 @@ window.thinktecture.translations.en = {
                 url: '/clients',
                 views: {
                     'content@': {
-                        templateUrl: 'app/clients/clientOverview.html',
+                        templateUrl: 'html/app/clients/clientOverview.html',
                         controller: 'clientOverviewController'
                     }
                 }
@@ -1875,7 +1875,7 @@ window.thinktecture.translations.en = {
                 url: '/clients/:clientId',
                 views: {
                     'content@': {
-                        templateUrl: 'app/clients/clientDetails.html',
+                        templateUrl: 'html/app/clients/clientDetails.html',
                         controller: 'clientDetailsController'
                     }
                 }
@@ -1888,7 +1888,7 @@ window.thinktecture.translations.en = {
                 url: '/scopes',
                 views: {
                     'content@': {
-                        templateUrl: 'app/scopes/scopeOverview.html',
+                        templateUrl: 'html/app/scopes/scopeOverview.html',
                         controller: 'scopeOverviewController'
                     }
                 }
@@ -1897,7 +1897,7 @@ window.thinktecture.translations.en = {
                 url: '/scopes/:scopeId',
                 views: {
                     'content@': {
-                        templateUrl: 'app/scopes/scopeDetails.html',
+                        templateUrl: 'html/app/scopes/scopeDetails.html',
                         controller: 'scopeDetailsController'
                     }
                 }

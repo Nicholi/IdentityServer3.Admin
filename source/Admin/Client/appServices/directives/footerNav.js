@@ -4,7 +4,7 @@
     app.module.directive('footerNav', function () {
         return {
             restrict: 'E',
-            templateUrl: 'appServices/directives/footerNav.html'
+            templateUrl: 'html/appServices/directives/footerNav.html'
         }
     });
 })();

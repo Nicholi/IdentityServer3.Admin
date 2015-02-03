@@ -8,7 +8,7 @@
 
         this.apiBaseUrl = function () {
             // TODO: This value must be set accordingly later on
-            return 'http://windows8vm.local:9010/';
+            return '/';
         };
 
     }

@@ -9,7 +9,7 @@
                 ngModel: '=',
                 toggle: '&'
             },
-            templateUrl: 'appServices/directives/yesNoToggle.html'
+            templateUrl: 'html/appServices/directives/yesNoToggle.html'
         }
     });
 })();

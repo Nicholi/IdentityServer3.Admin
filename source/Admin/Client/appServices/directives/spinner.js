@@ -7,7 +7,7 @@
             scope: {
                 key: '@'
             },
-            templateUrl: 'appServices/directives/spinner.html'
+            templateUrl: 'html/appServices/directives/spinner.html'
         }
     });
 })();

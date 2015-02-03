@@ -9,7 +9,7 @@
                 url: '/',
                 views: {
                     'content@': {
-                        templateUrl: 'app/start/start.html',
+                        templateUrl: 'html/app/start/start.html',
                         controller: 'startController'
                     }
                 }
@@ -22,7 +22,7 @@
                 url: '/clients',
                 views: {
                     'content@': {
-                        templateUrl: 'app/clients/clientOverview.html',
+                        templateUrl: 'html/app/clients/clientOverview.html',
                         controller: 'clientOverviewController'
                     }
                 }
@@ -31,7 +31,7 @@
                 url: '/clients/:clientId',
                 views: {
                     'content@': {
-                        templateUrl: 'app/clients/clientDetails.html',
+                        templateUrl: 'html/app/clients/clientDetails.html',
                         controller: 'clientDetailsController'
                     }
                 }
@@ -44,7 +44,7 @@
                 url: '/scopes',
                 views: {
                     'content@': {
-                        templateUrl: 'app/scopes/scopeOverview.html',
+                        templateUrl: 'html/app/scopes/scopeOverview.html',
                         controller: 'scopeOverviewController'
                     }
                 }
@@ -53,7 +53,7 @@
                 url: '/scopes/:scopeId',
                 views: {
                     'content@': {
-                        templateUrl: 'app/scopes/scopeDetails.html',
+                        templateUrl: 'html/app/scopes/scopeDetails.html',
                         controller: 'scopeDetailsController'
                     }
                 }

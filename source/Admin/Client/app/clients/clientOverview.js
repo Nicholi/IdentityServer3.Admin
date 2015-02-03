@@ -36,7 +36,7 @@
 
         $scope.newClient = function () {
             var modal = $modal.open({
-                templateUrl: 'app/clients/newClient.html',
+                templateUrl: 'html/app/clients/newClient.html',
                 controller: 'newClientController',
                 backdrop: 'static'
             });

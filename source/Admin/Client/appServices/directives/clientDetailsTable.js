@@ -7,7 +7,7 @@
             scope: {
                 data: '='
             },
-            templateUrl: 'appServices/directives/clientDetailsTable.html',
+            templateUrl: 'html/appServices/directives/clientDetailsTable.html',
             link: function (scope, element, attrs) {
                 scope.propertyExpression = 'item';
                 scope.noDataTranslationKey = 'COMMON.NO_DATA';

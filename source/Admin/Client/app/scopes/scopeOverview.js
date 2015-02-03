@@ -51,7 +51,7 @@
 
         $scope.newIdentityScope = function () {
             newScope({
-                templateUrl: 'app/scopes/newIdentityScope.html',
+                templateUrl: 'html/app/scopes/newIdentityScope.html',
                 controller: 'newIdentityScopeController',
                 backdrop: 'static'
             });
@@ -59,7 +59,7 @@
 
         $scope.newResourceScope = function () {
             newScope({
-                templateUrl: 'app/scopes/newResourceScope.html',
+                templateUrl: 'html/app/scopes/newResourceScope.html',
                 controller: 'newResourceScopeController',
                 backdrop: 'static'
             });

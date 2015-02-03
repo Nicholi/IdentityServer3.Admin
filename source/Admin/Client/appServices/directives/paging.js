@@ -10,7 +10,7 @@
                 totalItems: '=',
                 itemsPerPage: '='
             },
-            templateUrl: 'appServices/directives/paging.html',
+            templateUrl: 'html/appServices/directives/paging.html',
             link: {
                 pre: function (scope, element, attrs) {
                     if (!attrs.itemsPerPage) {

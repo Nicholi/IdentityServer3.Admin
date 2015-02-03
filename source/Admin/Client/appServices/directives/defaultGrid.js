@@ -8,7 +8,7 @@
                 onRefresh: '&',
                 columns: '='
             },
-            templateUrl: 'appServices/directives/defaultGrid.html',
+            templateUrl: 'html/appServices/directives/defaultGrid.html',
             link: function (scope, element, attrs) {
                 var pagingInformation = {
                     itemsPerPage: 10,

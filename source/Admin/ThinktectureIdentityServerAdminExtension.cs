@@ -23,7 +23,10 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi
 		    var httpConfiguration = new HttpConfiguration();
 			var container = RegisterServices(httpConfiguration, storageOptions);
 
+#if DEBUG
             app.UseCors(CorsOptions.AllowAll);
+#endif 
+
 			SetupHttpConfiguration(httpConfiguration, container);
 
             ConfigureFileServer(app);
@@ -38,7 +41,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi
 	        app.UseFileServer(new FileServerOptions
 	        {
 	            FileSystem =
-	                new EmbeddedResourceFileSystem(typeof (ThinktectureIdentityServerAdminExtension).Assembly, "Thinktecture.IdentityServer3.Admin.Client.assets"),
+	                new EmbeddedResourceFileSystem(typeof (ThinktectureIdentityServerAdminExtension).Assembly, "Thinktecture.IdentityServer3.Admin.Client.assets")
 	        });
 	    }
 
@@ -46,7 +49,10 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi
 		{
 		    configuration.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
 		    configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+
+#if DEBUG
 		    configuration.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+#endif
 		}
 
 		private static IContainer RegisterServices(HttpConfiguration configuration, StorageOptions storageOptions)

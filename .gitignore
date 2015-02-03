@@ -150,3 +150,12 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 distribution/
+
+
+# Node dev environment
+node_modules/
+node/
+server.js
+.idea/
+*.walrus
+package.json
