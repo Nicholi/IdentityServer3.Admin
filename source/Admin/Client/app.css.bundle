@@ -6,7 +6,7 @@
     <!--Determine whether to generate/re-generate this bundle on building the solution.-->
     <runOnBuild>true</runOnBuild>
     <!--Use absolute path in the generated CSS files. By default, the URLs are relative to generated bundled CSS file.-->
-    <adjustRelativePaths>true</adjustRelativePaths>
+    <adjustRelativePaths>false</adjustRelativePaths>
     <!--Specifies a custom subfolder to save files to. By default, compiled output will be placed in the same folder and nested under the original file.-->
     <outputDirectory>assets</outputDirectory>
   </settings>
