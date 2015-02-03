@@ -1,4 +1,4 @@
-# Thinktecture IdentityServer v3 Admin
+# Thinktecture IdentityServer3 Admin
 
 [![Build status](https://ci.appveyor.com/api/projects/status/l4kayb5n5whsnj1c?svg=true)](https://ci.appveyor.com/project/leastprivilege/thinktecture-identityserver-v3-admin)
 
@@ -9,6 +9,8 @@ Thinktecture.IdentityServer.v3.Admin is an administrative user interface for man
 * Clients
 * Scopes
 
-You will need a repository connector to read and write the data:
+You will need a repository connector to read and write the data perstitently. Otherwise an in-memory storage is used.
+
+List of available connectors:
 
 * [EntityFramework](https://github.com/thinktecture/Thinktecture.IdentityServer.v3.Admin.EntityFramework)
