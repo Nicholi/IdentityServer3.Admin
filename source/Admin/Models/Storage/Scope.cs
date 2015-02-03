@@ -17,5 +17,13 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage
         public virtual string ClaimsRule { get; set; }
         public virtual bool ShowInDiscoveryDocument { get; set; }
 
+        public Scope()
+        {
+            // Copied from original Scope model
+
+            IncludeAllClaimsForUser = false;
+            Enabled = true;
+            ShowInDiscoveryDocument = true;
+        }
     }
 }

@@ -33,5 +33,37 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage
         public virtual bool AlwaysSendClientClaims { get; set; }
         public virtual bool PrefixClientClaims { get; set; }
         public virtual ICollection<ClientGrantTypeRestriction> CustomGrantTypeRestrictions { get; set; }
+
+        public Client()
+        {
+            // Copied from original Client model
+            Enabled = true;
+            EnableLocalLogin = true;
+
+            // client claims settings
+            AlwaysSendClientClaims = false;
+            PrefixClientClaims = true;
+
+            // 5 minutes
+            AuthorizationCodeLifetime = 300;
+            IdentityTokenLifetime = 300;
+
+            // one hour
+            AccessTokenLifetime = 3600;
+
+            // 30 days
+            AbsoluteRefreshTokenLifetime = 2592000;
+
+            // 15 days
+            SlidingRefreshTokenLifetime = 1296000;
+
+            RefreshTokenUsage = TokenUsage.OneTimeOnly;
+            RefreshTokenExpiration = TokenExpiration.Absolute;
+
+            AccessTokenType = AccessTokenType.Jwt;
+
+            RequireConsent = true;
+            AllowRememberConsent = true;
+        }
     }
 }
