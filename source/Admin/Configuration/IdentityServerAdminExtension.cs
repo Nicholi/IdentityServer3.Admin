@@ -30,6 +30,8 @@ namespace Owin
             app.UseCors(CorsOptions.AllowAll);
 #endif 
 
+            options.SecurityMode.Configure(app, httpConfiguration);
+
 			SetupHttpConfiguration(httpConfiguration, container);
 
             ConfigureFileServer(app);
