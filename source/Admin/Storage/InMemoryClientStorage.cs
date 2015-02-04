@@ -12,7 +12,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
     public class InMemoryClientStorage : IPersistence<Client>
     {
         private readonly IList<Client> _clients = new List<Client>();
-        private int _internalClientCount = 0;
+        private int _internalClientCount = 1;
 
         public PageResult<Client> List(PagingInformation pagingInformation)
         {
@@ -44,8 +44,11 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
 
         public void Update(Client entity)
         {
+            var oldId = entity.Id;
             Delete(entity.Id);
             Add(entity);
+
+            _clients.Last().Id = oldId;
         }
 
         public int TotalCount()
@@ -55,7 +58,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
 
         public bool IsNameAvailable(Client entity)
         {
-            return _clients.All(c => c.ClientId != entity.ClientId);
+            return !_clients.Any(c => c.ClientId == entity.ClientId && c.Id != entity.Id);
         }
     }
 }

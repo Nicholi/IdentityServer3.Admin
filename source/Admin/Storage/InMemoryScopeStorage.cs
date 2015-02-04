@@ -12,7 +12,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
     public class InMemoryScopeStorage : IPersistence<Scope>
     {
         private readonly IList<Scope> _scopes = new List<Scope>();
-        private int _internalScopeCount = 0;
+        private int _internalScopeCount = 1;
 
         public PageResult<Scope> List(PagingInformation pagingInformation)
         {
@@ -44,8 +44,11 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
 
         public void Update(Scope entity)
         {
+            var oldId = entity.Id;
             Delete(entity.Id);
             Add(entity);
+
+            _scopes.Last().Id = oldId;
         }
 
         public int TotalCount()
@@ -55,7 +58,7 @@ namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
 
         public bool IsNameAvailable(Scope entity)
         {
-            return _scopes.All(c => c.Name != entity.Name);
+            return !_scopes.Any(s => s.Name == entity.Name && s.Id != entity.Id);
         }
     }
 }
