@@ -1,6 +1,6 @@
-﻿using Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage;
+﻿using Thinktecture.IdentityServer3.Admin.Models.Storage;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Validation
+namespace Thinktecture.IdentityServer3.Admin.Validation
 {
     public interface IValidation<in TEntity>
     {

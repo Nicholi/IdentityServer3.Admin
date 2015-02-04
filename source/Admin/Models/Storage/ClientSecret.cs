@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage
+namespace Thinktecture.IdentityServer3.Admin.Models.Storage
 {
     public class ClientSecret
     {

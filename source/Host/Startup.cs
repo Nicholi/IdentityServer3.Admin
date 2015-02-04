@@ -3,9 +3,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Cors;
 using Owin;
 using Thinktecture.IdentityServer.Core.Configuration;
-using Thinktecture.IdentityServer3.Admin.WebApi;
-using Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage;
-using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
+using Thinktecture.IdentityServer3.Admin;
+using Thinktecture.IdentityServer3.Admin.Models.Storage;
+using Thinktecture.IdentityServer3.Admin.Storage;
 
 [assembly: OwinStartup(typeof (Startup))]
 

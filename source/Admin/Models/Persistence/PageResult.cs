@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence
+namespace Thinktecture.IdentityServer3.Admin.Models.Persistence
 {
     /// <summary>
     /// Returns a paged list of <see cref="TEntity"/>

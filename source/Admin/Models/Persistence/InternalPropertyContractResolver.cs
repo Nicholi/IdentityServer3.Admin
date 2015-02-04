@@ -5,7 +5,7 @@ using System.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence
+namespace Thinktecture.IdentityServer3.Admin.Models.Persistence
 {
     /// <summary>
     /// Used for serializing internal properties.

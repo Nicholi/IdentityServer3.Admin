@@ -1,11 +1,11 @@
 ﻿using System.Web.Http;
 using System.Web.Http.ModelBinding;
-using Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence;
-using Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage;
-using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
-using Thinktecture.IdentityServer3.Admin.WebApi.Validation;
+using Thinktecture.IdentityServer3.Admin.Models.Persistence;
+using Thinktecture.IdentityServer3.Admin.Models.Storage;
+using Thinktecture.IdentityServer3.Admin.Storage;
+using Thinktecture.IdentityServer3.Admin.Validation;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
+namespace Thinktecture.IdentityServer3.Admin.Controllers
 {
 	public class ClientController : ApiController
 	{

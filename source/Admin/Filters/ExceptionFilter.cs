@@ -7,10 +7,9 @@ using System.Web.Http.Filters;
 using Autofac.Integration.WebApi;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Thinktecture.IdentityServer3.Admin.WebApi.Models;
-using Thinktecture.IdentityServer3.Admin.WebApi.Validation;
+using Thinktecture.IdentityServer3.Admin.Models;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Filters
+namespace Thinktecture.IdentityServer3.Admin.Filters
 {
     public class ErrorDto
     {

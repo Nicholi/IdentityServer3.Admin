@@ -1,8 +1,8 @@
 ﻿using System.Web.Http;
-using Thinktecture.IdentityServer3.Admin.WebApi.Models.Dto;
-using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
+using Thinktecture.IdentityServer3.Admin.Models.Dto;
+using Thinktecture.IdentityServer3.Admin.Storage;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Controllers
+namespace Thinktecture.IdentityServer3.Admin.Controllers
 {
     public class DashboardController : ApiController
     {

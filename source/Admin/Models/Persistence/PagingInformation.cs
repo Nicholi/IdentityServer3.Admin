@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence
+namespace Thinktecture.IdentityServer3.Admin.Models.Persistence
 {
     /// <summary>
     /// Paging information for getting a paged result of items.

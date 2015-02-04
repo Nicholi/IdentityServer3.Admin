@@ -3,7 +3,7 @@ using Autofac;
 using Thinktecture.IdentityServer.Core.Configuration;
 using Thinktecture.IdentityServer.Core.Services;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
+namespace Thinktecture.IdentityServer3.Admin.Storage
 {
     public class StorageModule : Module
     {

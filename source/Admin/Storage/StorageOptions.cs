@@ -1,4 +1,4 @@
-﻿namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
+﻿namespace Thinktecture.IdentityServer3.Admin.Storage
 {
     public class StorageOptions
     {

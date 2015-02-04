@@ -1,6 +1,6 @@
-﻿using Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence;
+﻿using Thinktecture.IdentityServer3.Admin.Models.Persistence;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
+namespace Thinktecture.IdentityServer3.Admin.Storage
 {
     public interface IPersistence<TEntity>
     {

@@ -4,17 +4,16 @@ using System.Web.Http.Cors;
 using Autofac;
 using Autofac.Integration.WebApi;
 using Microsoft.Owin.Cors;
+using Microsoft.Owin.FileSystems;
+using Microsoft.Owin.StaticFiles;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
-using Thinktecture.IdentityServer3.Admin.WebApi.Filters;
-using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
-using Thinktecture.IdentityServer3.Admin.WebApi.Validation;
-using Microsoft.Owin;
-using Microsoft.Owin.FileSystems;
-using Microsoft.Owin.StaticFiles;
+using Thinktecture.IdentityServer3.Admin.Filters;
+using Thinktecture.IdentityServer3.Admin.Storage;
+using Thinktecture.IdentityServer3.Admin.Validation;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi
+namespace Thinktecture.IdentityServer3.Admin
 {
 	public static class ThinktectureIdentityServerAdminExtension
 	{

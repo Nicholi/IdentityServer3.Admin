@@ -1,7 +1,7 @@
 ﻿using Thinktecture.IdentityServer.Core.Configuration;
-using Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage;
+using Thinktecture.IdentityServer3.Admin.Models.Storage;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Storage
+namespace Thinktecture.IdentityServer3.Admin.Storage
 {
     public abstract class StorageRegistrations
     {

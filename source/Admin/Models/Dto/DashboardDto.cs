@@ -1,4 +1,4 @@
-﻿namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Dto
+﻿namespace Thinktecture.IdentityServer3.Admin.Models.Dto
 {
     public class DashboardDto
     {

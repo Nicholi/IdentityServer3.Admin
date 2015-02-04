@@ -1,9 +1,9 @@
 ﻿using System;
-using Thinktecture.IdentityServer3.Admin.WebApi.Models;
-using Thinktecture.IdentityServer3.Admin.WebApi.Models.Storage;
-using Thinktecture.IdentityServer3.Admin.WebApi.Storage;
+using Thinktecture.IdentityServer3.Admin.Models;
+using Thinktecture.IdentityServer3.Admin.Models.Storage;
+using Thinktecture.IdentityServer3.Admin.Storage;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Validation
+namespace Thinktecture.IdentityServer3.Admin.Validation
 {
     public class ClientValidation : IClientValidation
     {

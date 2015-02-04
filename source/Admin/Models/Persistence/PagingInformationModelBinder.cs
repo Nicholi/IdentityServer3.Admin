@@ -4,7 +4,7 @@ using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
 using Newtonsoft.Json;
 
-namespace Thinktecture.IdentityServer3.Admin.WebApi.Models.Persistence
+namespace Thinktecture.IdentityServer3.Admin.Models.Persistence
 {
     // TODO: Review this, maybe we should move paging information to body? (but it is a http get request), mh 
     /// <summary>
