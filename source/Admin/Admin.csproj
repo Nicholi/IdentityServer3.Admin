@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiException.cs" />
+    <Compile Include="Configuration\IdentityServerAdminOptions.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\ScopeController.cs" />
@@ -131,7 +132,7 @@
     <Compile Include="Storage\StorageModule.cs" />
     <Compile Include="Storage\StorageOptions.cs" />
     <Compile Include="Storage\StorageRegistrations.cs" />
-    <Compile Include="ThinktectureIdentityServerAdminExtension.cs" />
+    <Compile Include="Configuration\IdentityServerAdminExtension.cs" />
     <Compile Include="Validation\ClientValidation.cs" />
     <Compile Include="Validation\IValidation.cs" />
     <Compile Include="Validation\ScopeValidation.cs" />
@@ -284,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Client\appServices\filters\" />
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.3.0\tools\AutoMapper.targets')" />

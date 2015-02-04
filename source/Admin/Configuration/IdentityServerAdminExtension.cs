@@ -12,15 +12,19 @@ using Owin;
 using Thinktecture.IdentityServer3.Admin.Filters;
 using Thinktecture.IdentityServer3.Admin.Storage;
 using Thinktecture.IdentityServer3.Admin.Validation;
+using Thinktecture.IdentityServer3.Admin.Configuration;
+using System;
 
-namespace Thinktecture.IdentityServer3.Admin
+namespace Owin
 {
-	public static class ThinktectureIdentityServerAdminExtension
+	public static class IdentityServerAdminExtension
 	{
-		public static void UseThinktectureIdentityServerAdmin(this IAppBuilder app, StorageOptions storageOptions)
+		public static void UseIdentityServerAdmin(this IAppBuilder app, IdentityServerAdminOptions options)
 		{
+            if (options == null) throw new ArgumentNullException("options");
+
 		    var httpConfiguration = new HttpConfiguration();
-			var container = RegisterServices(httpConfiguration, storageOptions);
+			var container = RegisterServices(httpConfiguration, options.StorageOptions);
 
 #if DEBUG
             app.UseCors(CorsOptions.AllowAll);
@@ -40,7 +44,7 @@ namespace Thinktecture.IdentityServer3.Admin
 	        app.UseFileServer(new FileServerOptions
 	        {
 	            FileSystem =
-	                new EmbeddedResourceFileSystem(typeof (ThinktectureIdentityServerAdminExtension).Assembly, "Thinktecture.IdentityServer3.Admin.Client.assets")
+	                new EmbeddedResourceFileSystem(typeof (IdentityServerAdminExtension).Assembly, "Thinktecture.IdentityServer3.Admin.Client.assets")
 	        });
 	    }
 
@@ -58,7 +62,7 @@ namespace Thinktecture.IdentityServer3.Admin
 		{
 			var builder = new ContainerBuilder();
 
-		    builder.RegisterApiControllers(typeof (ThinktectureIdentityServerAdminExtension).Assembly);
+		    builder.RegisterApiControllers(typeof (IdentityServerAdminExtension).Assembly);
 		    builder.RegisterInstance(storageOptions).AsSelf();
 		    builder.RegisterModule(new StorageModule(storageOptions));
 

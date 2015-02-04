@@ -4,6 +4,7 @@ using Microsoft.Owin.Cors;
 using Owin;
 using Thinktecture.IdentityServer.Core.Configuration;
 using Thinktecture.IdentityServer3.Admin;
+using Thinktecture.IdentityServer3.Admin.Configuration;
 using Thinktecture.IdentityServer3.Admin.Models.Storage;
 using Thinktecture.IdentityServer3.Admin.Storage;
 
@@ -29,10 +30,18 @@ namespace Admin.Host
         public void Configuration(IAppBuilder app)
         {
             var options = CreateOptions();
-            app.UseThinktectureIdentityServerAdmin(options);
+            app.UseIdentityServerAdmin(options);
         }
 
-        private StorageOptions CreateOptions()
+        private IdentityServerAdminOptions CreateOptions()
+        {
+            return new IdentityServerAdminOptions()
+            {
+                StorageOptions = CreateStorageOptions()
+            };
+        }
+        
+        private StorageOptions CreateStorageOptions()
         {
             return new StorageOptions()
             {
