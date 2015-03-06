@@ -2,6 +2,7 @@
 using System.Web.Http.ModelBinding;
 using Thinktecture.IdentityServer3.Admin.Models.Persistence;
 using Thinktecture.IdentityServer3.Admin.Models.Storage;
+using Thinktecture.IdentityServer3.Admin.Persistence.Models;
 using Thinktecture.IdentityServer3.Admin.Storage;
 using Thinktecture.IdentityServer3.Admin.Validation;
 

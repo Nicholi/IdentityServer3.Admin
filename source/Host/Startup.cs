@@ -6,6 +6,7 @@ using Thinktecture.IdentityServer.Core.Configuration;
 using Thinktecture.IdentityServer3.Admin;
 using Thinktecture.IdentityServer3.Admin.Configuration;
 using Thinktecture.IdentityServer3.Admin.Models.Storage;
+using Thinktecture.IdentityServer3.Admin.Persistence;
 using Thinktecture.IdentityServer3.Admin.Storage;
 
 [assembly: OwinStartup(typeof (Startup))]

@@ -1,5 +1,6 @@
 ﻿using Thinktecture.IdentityServer.Core.Configuration;
 using Thinktecture.IdentityServer3.Admin.Models.Storage;
+using Thinktecture.IdentityServer3.Admin.Persistence;
 
 namespace Thinktecture.IdentityServer3.Admin.Storage
 {

@@ -124,6 +124,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Thinktecture.IdentityServer3.1.0.1-build00043\lib\net45\Thinktecture.IdentityServer3.dll</HintPath>
     </Reference>
+    <Reference Include="Thinktecture.IdentityServer3.Admin.Persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thinktecture.IdentityServer3.Admin.Persistence.1.0.0\lib\Thinktecture.IdentityServer3.Admin.Persistence.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

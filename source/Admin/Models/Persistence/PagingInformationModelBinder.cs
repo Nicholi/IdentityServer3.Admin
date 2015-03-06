@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Web.Http.Controllers;
 using System.Web.Http.ModelBinding;
 using Newtonsoft.Json;
+using Thinktecture.IdentityServer3.Admin.Persistence.Models;
 
 namespace Thinktecture.IdentityServer3.Admin.Models.Persistence
 {
