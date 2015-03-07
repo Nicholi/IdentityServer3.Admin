@@ -431,7 +431,7 @@
 
         $scope.newScopeClaim = function () {
             var modal = $modal.open({
-                templateUrl: 'app/scopes/newScopeClaim.html',
+                templateUrl: 'html/app/scopes/newScopeClaim.html',
                 controller: 'newScopeClaimController'
             });
 
@@ -1236,7 +1236,8 @@ window.thinktecture.translations.en = {
          * @returns {string}
          */
         this.apiBaseUrl = function () {
-            return '/';
+            return 'http://windows8vm.local:8095/';
+            //return '/';
         };
 
     }
