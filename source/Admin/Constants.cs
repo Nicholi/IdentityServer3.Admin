@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Thinktecture.IdentityServer3.Admin
 {
-    class Constants
+    public class Constants
     {
         public const string LocalAuthenticationType = "idsvr3.admin.local";
+        public const string RemoteHostAuthenticationType = "idsvr3.admin.remote";
         public const string DefaultAdminRole = "admin";
 
         public class ClaimTypes
@@ -18,5 +19,6 @@ namespace Thinktecture.IdentityServer3.Admin
             public const string Role = "role";
         }
 
+        public const string RemoteHostAuthenticationConfigurationKey = "IdentityServer.Admin.RemoteHostAuthentication.Whitelist";
     }
 }

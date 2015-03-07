@@ -71,6 +71,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -107,10 +108,14 @@
   <ItemGroup>
     <Compile Include="ApiException.cs" />
     <Compile Include="Configuration\IdentityServerAdminOptions.cs" />
+    <Compile Include="Configuration\Security\RemoteAuthenticationMiddleware\RemoteAuthenticationHandler.cs" />
+    <Compile Include="Configuration\Security\RemoteAuthenticationMiddleware\RemoteAuthenticationMiddleware.cs" />
+    <Compile Include="Configuration\Security\RemoteAuthenticationMiddleware\RemoteAuthenticationOptions.cs" />
     <Compile Include="Configuration\Security\LocalAuthenticationMiddleware\LocalAuthenticationHandler.cs" />
     <Compile Include="Configuration\Security\LocalAuthenticationMiddleware\LocalAuthenticationMiddleware.cs" />
     <Compile Include="Configuration\Security\LocalAuthenticationMiddleware\LocalAuthenticationOptions.cs" />
     <Compile Include="Configuration\Security\LocalOnlySecurityMode.cs" />
+    <Compile Include="Configuration\Security\RemoteHostSecurityMode.cs" />
     <Compile Include="Configuration\Security\SecurityMode.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\ClientController.cs" />
