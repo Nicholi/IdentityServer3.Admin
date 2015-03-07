@@ -99,8 +99,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Thinktecture.IdentityServer3.1.0.1-build00043\lib\net45\Thinktecture.IdentityServer3.dll</HintPath>
     </Reference>
-    <Reference Include="Thinktecture.IdentityServer3.Admin.Persistence">
-      <HintPath>..\packages\Thinktecture.IdentityServer3.Admin.Persistence.1.0.0\lib\Thinktecture.IdentityServer3.Admin.Persistence.dll</HintPath>
+    <Reference Include="Thinktecture.IdentityServer3.Admin.Persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Thinktecture.IdentityServer3.Admin.Persistence.1.0.2\lib\Thinktecture.IdentityServer3.Admin.Persistence.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -120,16 +121,6 @@
     <Compile Include="Models\ErrorCodes.cs" />
     <Compile Include="Models\Persistence\InternalPropertyContractResolver.cs" />
     <Compile Include="Models\Persistence\PagingInformationModelBinder.cs" />
-    <Compile Include="Models\Storage\ClientGrantTypeRestriction.cs" />
-    <Compile Include="Models\Storage\ClientClaim.cs" />
-    <Compile Include="Models\Storage\ClientIdPRestriction.cs" />
-    <Compile Include="Models\Storage\ClientPostLogoutRedirectUri.cs" />
-    <Compile Include="Models\Storage\ClientScopeRestriction.cs" />
-    <Compile Include="Models\Storage\ClientRedirectUri.cs" />
-    <Compile Include="Models\Storage\Client.cs" />
-    <Compile Include="Models\Storage\ClientSecret.cs" />
-    <Compile Include="Models\Storage\Scope.cs" />
-    <Compile Include="Models\Storage\ScopeClaim.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Messages.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -142,7 +133,6 @@
     <Compile Include="Storage\ScopeStore.cs" />
     <Compile Include="Storage\StorageModule.cs" />
     <Compile Include="Storage\StorageOptions.cs" />
-    <Compile Include="Storage\StorageRegistrations.cs" />
     <Compile Include="Configuration\IdentityServerAdminExtension.cs" />
     <Compile Include="Validation\ClientValidation.cs" />
     <Compile Include="Validation\IValidation.cs" />

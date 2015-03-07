@@ -1,6 +1,6 @@
 ﻿using System;
 using Thinktecture.IdentityServer3.Admin.Models;
-using Thinktecture.IdentityServer3.Admin.Models.Storage;
+using Thinktecture.IdentityServer3.Admin.Persistence.Models.Storage;
 using Thinktecture.IdentityServer3.Admin.Storage;
 
 namespace Thinktecture.IdentityServer3.Admin.Validation
