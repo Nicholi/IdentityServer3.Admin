@@ -5,6 +5,7 @@ using Owin;
 using Thinktecture.IdentityServer.Core.Configuration;
 using Thinktecture.IdentityServer3.Admin;
 using Thinktecture.IdentityServer3.Admin.Configuration;
+using Thinktecture.IdentityServer3.Admin.Configuration.Security;
 using Thinktecture.IdentityServer3.Admin.Persistence;
 using Thinktecture.IdentityServer3.Admin.Persistence.Models.Storage;
 using Thinktecture.IdentityServer3.Admin.Storage;
@@ -38,7 +39,8 @@ namespace Admin.Host
         {
             return new IdentityServerAdminOptions()
             {
-                StorageOptions = CreateStorageOptions()
+                StorageOptions = CreateStorageOptions(),
+                SecurityMode = new RemoteHostSecurityMode()
             };
         }
         
