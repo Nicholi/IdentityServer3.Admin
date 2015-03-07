@@ -77,7 +77,7 @@
 
         $scope.newScopeClaim = function () {
             var modal = $modal.open({
-                templateUrl: 'app/scopes/newScopeClaim.html',
+                templateUrl: 'html/app/scopes/newScopeClaim.html',
                 controller: 'newScopeClaimController'
             });
 
