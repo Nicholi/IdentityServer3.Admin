@@ -18,7 +18,7 @@ div .row-margin-bottom {
   vertical-align: middle;
   float: none;
 }
-body {
+html body {
   margin-bottom: 60px;
 }
 html {
