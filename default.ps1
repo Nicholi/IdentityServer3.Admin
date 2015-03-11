@@ -1,29 +1,37 @@
 properties {
 	$base_directory = Resolve-Path . 
 	$src_directory = "$base_directory\source"
+	$output_directory = "$base_directory\build"
 	$dist_directory = "$base_directory\distribution"
 	$sln_file = "$src_directory\Admin.sln"
 	$target_config = "Release"
 	$framework_version = "v4.5"
+	$xunit_path = "$src_directory\packages\xunit.runners.1.9.2\tools\xunit.console.clr4.exe"
+	$ilmerge_path = "$src_directory\packages\ILMerge.2.13.0307\ILMerge.exe"
 	$nuget_path = "$src_directory\.nuget\nuget.exe"
 	
 	$buildNumber = 0;
-	$version = "1.0.0.0"
+	$version = "1.2.0.0"
 	$preRelease = $null
 }
 
 task default -depends Clean, CreateNuGetPackage
+task appVeyor -depends Clean, CreateNuGetPackage
 
 task Clean {
+	rmdir $output_directory -ea SilentlyContinue -recurse
 	rmdir $dist_directory -ea SilentlyContinue -recurse
 	exec { msbuild /nologo /verbosity:quiet $sln_file /p:Configuration=$target_config /t:Clean }
 }
 
 task Compile -depends UpdateVersion {
 	exec { msbuild /nologo /verbosity:q $sln_file /p:Configuration=$target_config /p:TargetFrameworkVersion=v4.5 }
+}
 
-	$versionAssemblyInfoFile = "$src_directory/VersionAssemblyInfo.cs"
-	rm $versionAssemblyInfoFile
+task RunTests -depends Compile {
+	$project = ".Tests"
+	mkdir $output_directory\xunit\$project -ea SilentlyContinue
+	.$xunit_path "$output_directory\$project.dll" /html "$output_directory\xunit\$project\index.html"
 }
 
 task UpdateVersion {
@@ -44,6 +52,22 @@ task UpdateVersion {
 	"[assembly: AssemblyFileVersion(""$assemblyFileVersion"")]" >> $versionAssemblyInfoFile
 }
 
+task ILMerge -depends Compile {
+	$input_dlls = "$output_directory\Thinktecture.IdentityServer3.Admin.dll"
+
+	Get-ChildItem -Path $output_directory -Filter *.dll |
+		foreach-object {
+			# Exclude Thinktecture.IdentityServer.Core.dll as that will be the primary assembly
+			if ("$_" -ne "Thinktecture.IdentityServer3.Admin.dll" -and 
+			    "$_" -ne "Owin.dll") {
+				$input_dlls = "$input_dlls $output_directory\$_"
+			}
+	}
+
+	New-Item $dist_directory\lib\net45 -Type Directory
+	Invoke-Expression "$ilmerge_path /targetplatform:v4 /internalize:ilmerge.exclude /allowDup /target:library /out:$dist_directory\lib\net45\Thinktecture.IdentityServer3.Admin.dll $input_dlls"
+}
+
 task CreateNuGetPackage -depends Compile {
 	$vSplit = $version.Split('.')
 	if($vSplit.Length -ne 4)
@@ -58,6 +82,13 @@ task CreateNuGetPackage -depends Compile {
 		$packageVersion = "$packageVersion-$preRelease" 
 	}
 
-	md $dist_directory
-	exec { . $nuget_path pack $src_directory\Admin\Admin.csproj -o $dist_directory -version $packageVersion }
+	if ($buildNumber -ne 0){
+		$packageVersion = $packageVersion + "-build" + $buildNumber.ToString().PadLeft(5,'0')
+	}
+	
+	New-Item $dist_directory\lib\net45 -Type Directory
+	copy-item $output_directory\Thinktecture.IdentityServer3.Admin.* $dist_directory\lib\net45
+
+	copy-item $src_directory\Admin.nuspec $dist_directory
+	exec { . $nuget_path pack $dist_directory\Admin.nuspec -BasePath $dist_directory -o $dist_directory -version $packageVersion }
 }

@@ -96,13 +96,13 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Thinktecture.IdentityServer3, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Thinktecture.IdentityServer3, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer3.1.2.2-build00143\lib\net45\Thinktecture.IdentityServer3.dll</HintPath>
+      <HintPath>..\packages\Thinktecture.IdentityServer3.1.3.0-build00165\lib\net45\Thinktecture.IdentityServer3.dll</HintPath>
     </Reference>
     <Reference Include="Thinktecture.IdentityServer3.Admin.Persistence, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Thinktecture.IdentityServer3.Admin.Persistence.1.0.5\lib\Thinktecture.IdentityServer3.Admin.Persistence.dll</HintPath>
+      <HintPath>..\packages\Thinktecture.IdentityServer3.Admin.Persistence.1.2.0-build00003\lib\net45\Thinktecture.IdentityServer3.Admin.Persistence.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -149,7 +149,9 @@
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="Client\app.css.bundle" />
+    <None Include="Client\app.css.bundle">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Client\lib.js.bundle" />
     <None Include="Client\app.js.bundle" />
     <None Include="Client\less\app.less" />
