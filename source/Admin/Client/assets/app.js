@@ -43,13 +43,15 @@
 
             var clientId = $stateParams.clientId;
 
-            clientsWebApi.get(clientId)
+            return clientsWebApi.get(clientId)
                 .then(function (client) {
                     $scope.client = client;
                 }, function (err) {
-                    uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_LOAD_DETAILS', {
+                    var errMsg = $translate.instant('CLIENTS.ERRORS.COULD_NOT_LOAD_DETAILS', {
                         clientId: clientId
-                    }));
+                    });
+                    uiHelper.showErrorMessage(err, errMsg);
+                    return errMsg;
                 })
                 .finally(function () {
                     spinnerService.stopGlobalSpinner();
@@ -59,11 +61,12 @@
         function save() {
             spinnerService.startGlobalSpinner();
 
-            clientsWebApi.update($scope.client)
+            return clientsWebApi.update($scope.client)
                 .then(function () {
                     uiHelper.success($translate.instant('CLIENTS.DETAILS.UPDATE_SUCCESSFUL'));
                 }, function (err) {
-                    uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_UPDATE'));
+                    var errMsg = $translate.instant('CLIENTS.ERRORS.COULD_NOT_UPDATE');
+                    return errMsg;
                 })
                 .finally(function () {
                     spinnerService.stopGlobalSpinner();
@@ -71,7 +74,7 @@
         }
 
         $scope.delete = function () {
-            confirmDialog.confirmTranslated('CLIENTS.OVERVIEW.CONFIRM_DELETE')
+            return confirmDialog.confirmTranslated('CLIENTS.OVERVIEW.CONFIRM_DELETE')
                 .then(function () {
                     spinnerService.startGlobalSpinner();
                     return clientsWebApi.remove($scope.client.id);
@@ -80,9 +83,13 @@
                     $state.go('^.overview');
                     uiHelper.success($translate.instant('CLIENTS.OVERVIEW.DELETE_SUCCESSFUL'));
                 }, function (err) {
-                    if (angular.isDefined(err)) {
-                        uiHelper.showErrorMessage(err, $translate.instant('CLIENTS.ERRORS.COULD_NOT_DELETE'));
+                    var errMsg = $translate.instant('CLIENTS.ERRORS.COULD_NOT_DELETE');
+                    var errSafe = err;
+                    if (!angular.isDefined(err)) {
+                        errSafe = {};
                     }
+                    uiHelper.showErrorMessage(err, errMsg);
+                    return errMsg;
                 })
                 .finally(function () {
                     spinnerService.stopGlobalSpinner();
@@ -377,13 +384,15 @@
             spinnerService.startGlobalSpinner();
             var scopeId = $stateParams.scopeId;
 
-            scopesWebApi.get(scopeId)
+            return scopesWebApi.get(scopeId)
                 .then(function (scope) {
                     $scope.scope = scope;
                 }, function (err) {
-                    uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_LOAD_DETAILS', {
+                    var errMsg = $translate.instant('SCOPES.ERRORS.COULD_NOT_LOAD_DETAILS');
+                    uiHelper.showErrorMessage(err, errMsg, {
                         scopeId: scopeId
-                    }));
+                    });
+                    return errMsg;
                 })
                 .finally(function () {
                     spinnerService.stopGlobalSpinner();
@@ -397,11 +406,14 @@
         function save() {
             spinnerService.startGlobalSpinner();
 
-            scopesWebApi.update($scope.scope)
+            return scopesWebApi.update($scope.scope)
                 .then(function () {
                     uiHelper.success($translate.instant('SCOPES.DETAILS.UPDATE_SUCCESSFUL'));
+                    return true;
                 }, function (err) {
-                    uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_UPDATE'));
+                    var errMsg = $translate.instant('SCOPES.ERRORS.COULD_NOT_UPDATE');
+                    uiHelper.showErrorMessage(err, errMsg);
+                    return errMsg;
                 })
                 .finally(function () {
                     spinnerService.stopGlobalSpinner();
@@ -411,7 +423,7 @@
         $scope.save = save;
 
         $scope.delete = function () {
-            confirmDialog.confirmTranslated('SCOPES.OVERVIEW.CONFIRM_DELETE')
+            return confirmDialog.confirmTranslated('SCOPES.OVERVIEW.CONFIRM_DELETE')
                 .then(function () {
                     spinnerService.startGlobalSpinner();
                     return scopesWebApi.remove($scope.scope.id);
@@ -420,9 +432,13 @@
                     $state.go('^.overview');
                     uiHelper.success($translate.instant('SCOPES.OVERVIEW.DELETE_SUCCESSFUL'));
                 }, function (err) {
-                    if (angular.isDefined(err)) {
-                        uiHelper.showErrorMessage(err, $translate.instant('SCOPES.ERRORS.COULD_NOT_DELETE'));
+                    var errSafe = err;
+                    if (!angular.isDefined(err)) {
+                        errSafe = {};
                     }
+                    var errMsg = $translate.instant('SCOPES.ERRORS.COULD_NOT_DELETE');
+                    uiHelper.showErrorMessage(err, errMsg);
+                    return errMsg;
                 })
                 .finally(function () {
                     spinnerService.stopGlobalSpinner();

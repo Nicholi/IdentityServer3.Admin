@@ -27,23 +27,23 @@
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.NAME">{{ 'CLIENTS.COMMON.CLIENT_NAME' | translate }}</span></td>
-                <td><a href="#" editable-text="client.clientName" e-required onaftersave="save()">{{ client.clientName }}</a></td>
+                <td><a href="#" editable-text="client.clientName" e-required onbeforesave="save()">{{ client.clientName }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.ID">{{ 'CLIENTS.COMMON.CLIENT_ID' | translate }}</span></td>
-                <td><a href="#" editable-text="client.clientId" e-required onaftersave="save()">{{ client.clientId }}</a></td>
+                <td><a href="#" editable-text="client.clientId" e-required onbeforesave="save()">{{ client.clientId }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.URI">{{ 'CLIENTS.COMMON.CLIENT_URI' | translate }}</span></td>
-                <td><a href="#" editable-text="client.clientUri" onaftersave="save()">{{ client.clientUri || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
+                <td><a href="#" editable-text="client.clientUri" onbeforesave="save()">{{ client.clientUri || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.LOGO_URI">{{ 'CLIENTS.COMMON.LOGO_URI' | translate }}</span></td>
-                <td><a href="#" editable-text="client.logoUri" onaftersave="save()">{{ client.logoUri || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
+                <td><a href="#" editable-text="client.logoUri" onbeforesave="save()">{{ client.logoUri || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.FLOW">{{ 'CLIENTS.COMMON.FLOW' | translate }}</span></td>
-                <td><a href="#" editable-select="client.flow" e-ng-options="item.value.enumValue as item.value.text for item in flows" onaftersave="save()">{{ showFlows() }}</a></td>
+                <td><a href="#" editable-select="client.flow" e-ng-options="item.value.enumValue as item.value.text for item in flows" onbeforesave="save()">{{ showFlows() }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.REQUIRE_CONSENT">{{ 'CLIENTS.COMMON.REQUIRE_CONSENT' | translate }}</span></td>
@@ -121,35 +121,35 @@
             <tbody>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.IDENTITY_TOKEN_LIFETIME">{{ 'CLIENTS.COMMON.IDENTITY_TOKEN_LIFETIME' | translate }}</span></td>
-                <td><a href="#" editable-lifetime="client.identityTokenLifetime" e-min="1" e-required onaftersave="save()">{{ client.identityTokenLifetime }}</a></td>
+                <td><a href="#" editable-lifetime="client.identityTokenLifetime" e-min="1" e-required onbeforesave="save()">{{ client.identityTokenLifetime }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.ACCESS_TOKEN_LIFETIME">{{ 'CLIENTS.COMMON.ACCESS_TOKEN_LIFETIME' | translate }}</span></td>
-                <td><a href="#" editable-lifetime="client.accessTokenLifetime" e-min="1" e-required onaftersave="save()">{{ client.accessTokenLifetime }}</a></td>
+                <td><a href="#" editable-lifetime="client.accessTokenLifetime" e-min="1" e-required onbeforesave="save()">{{ client.accessTokenLifetime }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.AUTHORIZATION_CODE_LIFETIME">{{ 'CLIENTS.COMMON.AUTHORIZATION_CODE_LIFETIME' | translate }}</span></td>
-                <td><a href="#" editable-lifetime="client.authorizationCodeLifetime" e-min="1" e-required onaftersave="save()">{{ client.authorizationCodeLifetime }}</a></td>
+                <td><a href="#" editable-lifetime="client.authorizationCodeLifetime" e-min="1" e-required onbeforesave="save()">{{ client.authorizationCodeLifetime }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.ABSOLUTE_REFRESH_TOKEN_LIFETIME">{{ 'CLIENTS.COMMON.ABSOLUTE_REFRESH_TOKEN_LIFETIME' | translate }}</span></td>
-                <td><a href="#" editable-lifetime="client.absoluteRefreshTokenLifetime" e-min="1" e-required onaftersave="save()">{{ client.absoluteRefreshTokenLifetime }}</a></td>
+                <td><a href="#" editable-lifetime="client.absoluteRefreshTokenLifetime" e-min="1" e-required onbeforesave="save()">{{ client.absoluteRefreshTokenLifetime }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.SLIDING_REFRESH_TOKEN_LIFETIME">{{ 'CLIENTS.COMMON.SLIDING_REFRESH_TOKEN_LIFETIME' | translate }}</span></td>
-                <td><a href="#" editable-lifetime="client.slidingRefreshTokenLifetime" e-min="1" e-required onaftersave="save()">{{ client.slidingRefreshTokenLifetime }}</a></td>
+                <td><a href="#" editable-lifetime="client.slidingRefreshTokenLifetime" e-min="1" e-required onbeforesave="save()">{{ client.slidingRefreshTokenLifetime }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.REFRESH_TOKEN_USAGE">{{ 'CLIENTS.COMMON.REFRESH_TOKEN_USAGE' | translate }}</span></td>
-                <td><a href="#" editable-select="client.refreshTokenUsage" e-ng-options="item.value.enumValue as item.value.text for item in tokenUsage" onaftersave="save()">{{ showTokenUsage() }}</a></td>
+                <td><a href="#" editable-select="client.refreshTokenUsage" e-ng-options="item.value.enumValue as item.value.text for item in tokenUsage" onbeforesave="save()">{{ showTokenUsage() }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.REFRESH_TOKEN_EXPIRATION">{{ 'CLIENTS.COMMON.REFRESH_TOKEN_EXPIRATION' | translate }}</span></td>
-                <td><a href="#" editable-select="client.refreshTokenExpiration" e-ng-options="item.value.enumValue as item.value.text for item in tokenExpiration" onaftersave="save()">{{ showTokenExpiration() }}</a></td>
+                <td><a href="#" editable-select="client.refreshTokenExpiration" e-ng-options="item.value.enumValue as item.value.text for item in tokenExpiration" onbeforesave="save()">{{ showTokenExpiration() }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.ACCESS_TOKEN_TYPE">{{ 'CLIENTS.COMMON.ACCESS_TOKEN_TYPE' | translate }}</span></td>
-                <td><a href="#" editable-select="client.accessTokenType" e-ng-options="item.value.enumValue as item.value.text for item in accessTokenType" onaftersave="save()">{{ showAccessTokenType() }}</a></td>
+                <td><a href="#" editable-select="client.accessTokenType" e-ng-options="item.value.enumValue as item.value.text for item in accessTokenType" onbeforesave="save()">{{ showAccessTokenType() }}</a></td>
             </tr>
             <tr>
                 <td><span documentation-tooltip="CLIENTS.INCLUDE_JWT_ID">{{ 'CLIENTS.COMMON.INCLUDE_JWT_ID' | translate }}</span></td>

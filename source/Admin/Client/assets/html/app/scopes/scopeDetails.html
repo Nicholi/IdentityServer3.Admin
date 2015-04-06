@@ -23,23 +23,23 @@
     </tr>
     <tr>
         <td><span documentation-tooltip="SCOPES.NAME">{{ 'SCOPES.COMMON.NAME' | translate }}</span></td>
-        <td><a href="#" editable-text="scope.name" e-required onaftersave="save()">{{ scope.name }}</a></td>
+        <td><a href="#" editable-text="scope.name" e-required onbeforesave="save()">{{ scope.name }}</a></td>
     </tr>
     <tr>
         <td><span documentation-tooltip="SCOPES.DISPLAY_NAME">{{ 'SCOPES.COMMON.DISPLAY_NAME' | translate }}</span></td>
-        <td><a href="#" editable-text="scope.displayName" e-required onaftersave="save()">{{ scope.displayName }}</a></td>
+        <td><a href="#" editable-text="scope.displayName" e-required onbeforesave="save()">{{ scope.displayName }}</a></td>
     </tr>
     <tr>
         <td><span documentation-tooltip="SCOPES.DESCRIPTION">{{ 'SCOPES.COMMON.DESCRIPTION' | translate }}</span></td>
-        <td><a href="#" editable-text="scope.description" onaftersave="save()">{{ scope.description || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
+        <td><a href="#" editable-text="scope.description" onbeforesave="save()">{{ scope.description || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
     </tr>
     <tr>
         <td><span documentation-tooltip="SCOPES.TYPE">{{ 'SCOPES.COMMON.TYPE' | translate }}</span></td>
-        <td><a href="#" editable-select="scope.type" e-ng-options="item.value.enumValue as item.value.text for item in scopeTypes" onaftersave="save()">{{ showScopeType() }}</a></td>
+        <td><a href="#" editable-select="scope.type" e-ng-options="item.value.enumValue as item.value.text for item in scopeTypes" onbeforesave="save()">{{ showScopeType() }}</a></td>
     </tr>
     <tr>
         <td><span documentation-tooltip="SCOPES.CLAIMS_RULE">{{ 'SCOPES.COMMON.CLAIMS_RULE' | translate }}</span></td>
-        <td><a href="#" editable-text="scope.claimsRule" onaftersave="save()">{{ scope.claimsRule || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
+        <td><a href="#" editable-text="scope.claimsRule" onbeforesave="save()">{{ scope.claimsRule || 'COMMON.EMPTY_FIELD' | translate }}</a></td>
     </tr>
     <tr>
         <td><span documentation-tooltip="SCOPES.REQUIRED">{{ 'SCOPES.COMMON.REQUIRED' | translate }}</span></td>
@@ -85,8 +85,8 @@
     </thead>
     <tbody>
     <tr ng-repeat="claim in scope.scopeClaims">
-        <td><a href="#" editable-text="claim.name" e-required onaftersave="save()">{{ claim.name }}</a></td>
-        <td><a href="#" editable-text="claim.description" onaftersave="save()">{{ claim.description }}</a></td>
+        <td><a href="#" editable-text="claim.name" e-required onbeforesave="save()">{{ claim.name }}</a></td>
+        <td><a href="#" editable-text="claim.description" onbeforesave="save()">{{ claim.description }}</a></td>
         <td>
             <yes-no-toggle ng-model="claim.alwaysIncludeInIdToken" toggle="save()" ></yes-no-toggle>
         </td>
