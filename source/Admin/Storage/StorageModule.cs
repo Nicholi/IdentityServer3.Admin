@@ -1,9 +1,9 @@
 ﻿using System;
 using Autofac;
-using Thinktecture.IdentityServer.Core.Configuration;
-using Thinktecture.IdentityServer.Core.Services;
+using IdentityServer3.Core.Configuration;
+using IdentityServer3.Core.Services;
 
-namespace Thinktecture.IdentityServer3.Admin.Storage
+namespace IdentityServer3.Admin.Storage
 {
     public class StorageModule : Module
     {

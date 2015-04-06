@@ -19,11 +19,11 @@ using System.Configuration;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using IdentityServer3.Admin.Resources;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Infrastructure;
-using Thinktecture.IdentityServer3.Admin.Resources;
 
-namespace Thinktecture.IdentityServer3.Admin.Configuration.Security.RemoteAuthenticationMiddleware
+namespace IdentityServer3.Admin.Configuration.Security.RemoteAuthenticationMiddleware
 {
     public class RemoteAuthenticationHandler : AuthenticationHandler<RemoteAuthenticationOptions>
     {

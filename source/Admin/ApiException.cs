@@ -1,7 +1,7 @@
 ﻿using System;
-using Thinktecture.IdentityServer3.Admin.Models;
+using IdentityServer3.Admin.Models;
 
-namespace Thinktecture.IdentityServer3.Admin
+namespace IdentityServer3.Admin
 {
     [Serializable]
     public class ApiException : Exception

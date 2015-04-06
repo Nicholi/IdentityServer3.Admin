@@ -1236,8 +1236,7 @@ window.thinktecture.translations.en = {
          * @returns {string}
          */
         this.apiBaseUrl = function () {
-            return 'http://windows8vm.local:8095/';
-            //return '/';
+            return '/';
         };
 
     }

@@ -1,6 +1,6 @@
-﻿using Thinktecture.IdentityServer3.Admin.Persistence;
+﻿using IdentityServer3.Admin.Persistence;
 
-namespace Thinktecture.IdentityServer3.Admin.Storage
+namespace IdentityServer3.Admin.Storage
 {
     public class StorageOptions
     {

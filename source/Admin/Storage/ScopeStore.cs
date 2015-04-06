@@ -1,8 +1,8 @@
-﻿using Thinktecture.IdentityServer3.Admin.Persistence;
-using Thinktecture.IdentityServer3.Admin.Persistence.Models;
-using Thinktecture.IdentityServer3.Admin.Persistence.Models.Storage;
+﻿using IdentityServer3.Admin.Persistence;
+using IdentityServer3.Admin.Persistence.Models;
+using IdentityServer3.Admin.Persistence.Models.Storage;
 
-namespace Thinktecture.IdentityServer3.Admin.Storage
+namespace IdentityServer3.Admin.Storage
 {
     public class ScopeStore : IPersistence<Scope>
     {

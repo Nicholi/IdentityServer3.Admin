@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.Infrastructure;
+
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Thinktecture.IdentityServer3.Admin.Resources;
+using IdentityServer3.Admin.Resources;
+using Microsoft.Owin.Security;
+using Microsoft.Owin.Security.Infrastructure;
 
-namespace Thinktecture.IdentityServer3.Admin.Configuration.Security.LocalAuthentication
+namespace IdentityServer3.Admin.Configuration.Security.LocalAuthenticationMiddleware
 {
     public class LocalAuthenticationHandler : AuthenticationHandler<LocalAuthenticationOptions>
     {

@@ -1,6 +1,6 @@
-﻿using Thinktecture.IdentityServer3.Admin.Persistence.Models.Storage;
+﻿using IdentityServer3.Admin.Persistence.Models.Storage;
 
-namespace Thinktecture.IdentityServer3.Admin.Validation
+namespace IdentityServer3.Admin.Validation
 {
     public interface IValidation<in TEntity>
     {

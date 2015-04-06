@@ -5,11 +5,11 @@ using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Web.Http.Filters;
 using Autofac.Integration.WebApi;
+using IdentityServer3.Admin.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Thinktecture.IdentityServer3.Admin.Models;
 
-namespace Thinktecture.IdentityServer3.Admin.Filters
+namespace IdentityServer3.Admin.Filters
 {
     public class ErrorDto
     {

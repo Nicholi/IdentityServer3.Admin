@@ -1,4 +1,4 @@
-﻿namespace Thinktecture.IdentityServer3.Admin.Models
+﻿namespace IdentityServer3.Admin.Models
 {
     /// <summary>
     /// Error code which will be returned, if the error is well known.

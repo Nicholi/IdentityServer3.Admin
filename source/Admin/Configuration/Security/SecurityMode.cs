@@ -1,12 +1,7 @@
-﻿using Owin;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
+﻿using System.Web.Http;
+using Owin;
 
-namespace Thinktecture.IdentityServer3.Admin.Configuration.Security
+namespace IdentityServer3.Admin.Configuration.Security
 {
     public abstract class SecurityMode
     {

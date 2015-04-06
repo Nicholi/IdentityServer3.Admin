@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace Thinktecture.IdentityServer3.Admin.Configuration.Security.RemoteAuthenticationMiddleware
+namespace IdentityServer3.Admin.Configuration.Security.RemoteAuthenticationMiddleware
 {
     public class RemoteAuthenticationOptions : Microsoft.Owin.Security.AuthenticationOptions
     {

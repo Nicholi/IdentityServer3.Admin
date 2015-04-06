@@ -16,9 +16,8 @@
 
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Infrastructure;
-using Thinktecture.IdentityServer3.Admin.Configuration.Security.LocalAuthentication;
 
-namespace Thinktecture.IdentityServer3.Admin.Configuration.Security.RemoteAuthenticationMiddleware
+namespace IdentityServer3.Admin.Configuration.Security.RemoteAuthenticationMiddleware
 {
     public class RemoteAuthenticationMiddleware : AuthenticationMiddleware<RemoteAuthenticationOptions>
     {

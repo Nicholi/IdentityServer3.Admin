@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>Thinktecture.IdentityServer3.Admin</id>
+    <id>IdentityServer3.Admin</id>
     <version>0.0.0</version>
-    <title>Thinktecture IdentityServer3 - Admin Service and UI</title>
+    <title>IdentityServer3 - Admin Service and UI</title>
     <authors>Brock Allen, Dominick Baier, Manuel Rauber, Christian Liebel</authors>
     <owners>Brock Allen, Dominick Baier</owners>
-    <projectUrl>https://github.com/IdentityServer/Thinktecture.IdentityServer3.Admin</projectUrl>
-    <iconUrl>http://www.thinktecture.com/images/favicon.ico</iconUrl>
+    <projectUrl>https://github.com/IdentityServer/IdentityServer3.Admin</projectUrl>
+    <iconUrl>https://identityserver.github.io/Documentation/assets/images/icons/IDserver_icon128.jpg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Thinktecture IdentityServer3 - Admin Service and UI</description>
+    <description>IdentityServer3 - Admin Service and UI</description>
     <copyright>Copyright 2015</copyright>
-    <tags>Thinktecture IdentityServer Identity Admin</tags>
+    <tags>IdentityServer Identity Admin</tags>
   </metadata>
 </package>

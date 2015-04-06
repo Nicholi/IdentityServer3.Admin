@@ -1,8 +1,8 @@
 ﻿using System.Web.Http;
+using IdentityServer3.Admin.Configuration.Security.RemoteAuthenticationMiddleware;
 using Owin;
-using Thinktecture.IdentityServer3.Admin.Configuration.Security.RemoteAuthenticationMiddleware;
 
-namespace Thinktecture.IdentityServer3.Admin.Configuration.Security
+namespace IdentityServer3.Admin.Configuration.Security
 {
     public class RemoteHostSecurityMode : SecurityMode
     {

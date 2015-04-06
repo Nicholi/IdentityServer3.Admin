@@ -13,11 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-using Microsoft.Owin.Security;
-using Thinktecture.IdentityServer.Core.Configuration;
 
-namespace Thinktecture.IdentityServer3.Admin.Configuration.Security.LocalAuthentication
+namespace IdentityServer3.Admin.Configuration.Security.LocalAuthenticationMiddleware
 {
     public class LocalAuthenticationOptions : Microsoft.Owin.Security.AuthenticationOptions
     {

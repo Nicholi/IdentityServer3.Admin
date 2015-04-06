@@ -1,21 +1,20 @@
-﻿using System.Net.Http.Formatting;
+﻿using System;
+using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Autofac;
 using Autofac.Integration.WebApi;
+using IdentityServer3.Admin.Filters;
+using IdentityServer3.Admin.Storage;
+using IdentityServer3.Admin.Validation;
 using Microsoft.Owin.Cors;
 using Microsoft.Owin.FileSystems;
 using Microsoft.Owin.StaticFiles;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Owin;
-using Thinktecture.IdentityServer3.Admin.Filters;
-using Thinktecture.IdentityServer3.Admin.Storage;
-using Thinktecture.IdentityServer3.Admin.Validation;
-using Thinktecture.IdentityServer3.Admin.Configuration;
-using System;
 
-namespace Owin
+namespace IdentityServer3.Admin.Configuration
 {
 	public static class IdentityServerAdminExtension
 	{

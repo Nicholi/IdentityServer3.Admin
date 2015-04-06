@@ -1,13 +1,13 @@
 ﻿using System.Net;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
-using Thinktecture.IdentityServer3.Admin.Models.Persistence;
-using Thinktecture.IdentityServer3.Admin.Persistence.Models;
-using Thinktecture.IdentityServer3.Admin.Persistence.Models.Storage;
-using Thinktecture.IdentityServer3.Admin.Storage;
-using Thinktecture.IdentityServer3.Admin.Validation;
+using IdentityServer3.Admin.Models.Persistence;
+using IdentityServer3.Admin.Storage;
+using IdentityServer3.Admin.Validation;
+using IdentityServer3.Admin.Persistence.Models;
+using IdentityServer3.Admin.Persistence.Models.Storage;
 
-namespace Thinktecture.IdentityServer3.Admin.Controllers
+namespace IdentityServer3.Admin.Controllers
 {
 	public class ScopeController : ApiController
 	{
