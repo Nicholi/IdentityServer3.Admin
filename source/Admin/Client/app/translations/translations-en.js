@@ -156,6 +156,9 @@ window.thinktecture.translations.en = {
         'PLEASE_SELECT': 'Please select...',
         'EMPTY_FIELD': 'empty',
         'PLEASE_CONFIRM': 'Please confirm',
+        'EXPIRATION': 'EXPIRATION',
+        'URI': 'Uri',
+        'CLAIM': 'Claim',
         'PAGING': {
             'PREVIOUS': '‹',
             'NEXT': '›',

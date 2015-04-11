@@ -61,7 +61,7 @@
         </table>
 
         <h2><span documentation-tooltip="CLIENTS.SECRETS">{{ 'CLIENTS.COMMON.CLIENT_SECRETS' | translate }}</span></h2>
-        <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CLIENT_SECRETS" data="client.clientSecrets" property="description"></client-details-table>
+        <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CLIENT_SECRETS" data="client.clientSecrets" columns="columnDefinitions.clientSecrets"></client-details-table>
     </tab>
     <tab>
         <tab-heading translate>CLIENTS.DETAILS.TABS.URIS_AND_RESTRICTIONS</tab-heading>
@@ -85,27 +85,27 @@
             <tab>
                 <tab-heading translate>CLIENTS.COMMON.REDIRECT_URIS</tab-heading>
 
-                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_REDIRECT_URIS" data="client.redirectUris" property="uri"></client-details-table>
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_REDIRECT_URIS" data="client.redirectUris" columns="columnDefinitions.uris"></client-details-table>
             </tab>
             <tab>
                 <tab-heading translate>CLIENTS.COMMON.POST_LOGOUT_REDIRECT_URIS</tab-heading>
 
-                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_POST_LOGOUT_REDIRECT_URIS" data="client.postLogoutRedirectUris" property="uri"></client-details-table>
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_POST_LOGOUT_REDIRECT_URIS" data="client.postLogoutRedirectUris" columns="columnDefinitions.uris"></client-details-table>
             </tab>
             <tab>
                 <tab-heading translate>CLIENTS.COMMON.SCOPE_RESTRICTIONS</tab-heading>
 
-                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_SCOPE_RESTRICTIONS" data="client.scopeRestrictions" property="scope"></client-details-table>
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_SCOPE_RESTRICTIONS" data="client.scopeRestrictions" columns="columnDefinitions.scopeRestrictions"></client-details-table>
             </tab>
             <tab>
                 <tab-heading translate>CLIENTS.COMMON.IDENTITY_PROVIDER_RESTRICTIONS</tab-heading>
 
-                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_IDENTITY_PROVIDER_RESTRICTIONS" data="client.identityProviderRestrictions" property="provider"></client-details-table>
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_IDENTITY_PROVIDER_RESTRICTIONS" data="client.identityProviderRestrictions" columns="columnDefinitions.identityProviderRestrictions"></client-details-table>
             </tab>
             <tab>
                 <tab-heading translate>CLIENTS.COMMON.CUSTOM_GRANT_TYPE_RESTRICTIONS</tab-heading>
 
-                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CUSTOM_GRANT_TYPE_RESTRICTIONS" data="client.customGrantTypeRestrictions" property="grantType"></client-details-table>
+                <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CUSTOM_GRANT_TYPE_RESTRICTIONS" data="client.customGrantTypeRestrictions" columns="columnDefinitions.customGrantTypeRestrictions"></client-details-table>
             </tab>
         </tabset>
     </tab>
@@ -186,6 +186,6 @@
         </table>
 
         <h2 translate>CLIENTS.COMMON.CLAIMS</h2>
-        <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CLAIMS" data="client.claims" property="type"></client-details-table>
+        <client-details-table no-data-translation-key="CLIENTS.DETAILS.NO_CLAIMS" data="client.claims" columns="columnDefinitions.claims"></client-details-table>
     </tab>
 </tabset>

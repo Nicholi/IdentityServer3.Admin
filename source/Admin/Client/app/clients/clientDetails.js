@@ -37,7 +37,54 @@
             return $scope.accessTokenType[$scope.client.accessTokenType].value.text;
         };
 
-        function loadData () {
+        $scope.columnDefinitions = {
+            clientSecrets: [
+                {
+                    headerText: $translate.instant('COMMON.DESCRIPTION'),
+                    property: 'description'
+                },
+                {
+                    headerText: $translate.instant('COMMON.VALUE'),
+                    property: 'value'
+                }
+                ,
+                {
+                    headerText: $translate.instant('COMMON.EXPIRATION'),
+                    property: 'expiration'
+                }
+            ],
+            uris: [{
+                headerText: $translate.instant('COMMON.URI'),
+                property: 'uri'
+            }],
+            scopeRestrictions: [{
+                headerText: $translate.instant('COMMON.VALUE'),
+                property: 'scope'
+            }],
+            identityProviderRestrictions: [{
+                headerText: $translate.instant('COMMON.VALUE'),
+                property: 'provider'
+            }],
+            customGrantTypeRestrictions: [{
+                headerText: $translate.instant('COMMON.VALUE'),
+                property: 'grantType'
+            }],
+            allowedCorsOrigins: [{
+                headerText: $translate.instant('COMMON.VALUE'),
+                property: 'origin'
+            }],
+            claims: [
+                {
+                    headerText: $translate.instant('COMMON.CLAIM'),
+                    property: 'type'
+                },
+                {
+                    headerText: $translate.instant('COMMON.VALUE'),
+                    property: 'value'
+                }]
+        };
+
+        function loadData() {
             spinnerService.startGlobalSpinner();
 
             var clientId = $stateParams.clientId;
