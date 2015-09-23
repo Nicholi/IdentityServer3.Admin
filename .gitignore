@@ -159,3 +159,7 @@ server.js
 .idea/
 *.walrus
 package.json
+
+# IdentityServer specific
+.vs/
+source/VersionAssemblyInfo.cs
