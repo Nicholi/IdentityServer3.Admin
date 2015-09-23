@@ -18,6 +18,11 @@ namespace IdentityServer3.Admin.Storage
         {
             base.Load(builder);
 
+            foreach (var registration in _storageOptions.Registrations)
+            {
+                Register(builder, registration, registration.Name);
+            }
+
             builder.RegisterType<ScopeStore>().SingleInstance();
             builder.RegisterType<ClientStore>().SingleInstance();
 
